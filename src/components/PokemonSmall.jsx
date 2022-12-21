@@ -1,22 +1,18 @@
-const PokemonSmall = ({ info }) => {
-  const { loading, data } = info;
+const PokemonSmall = ({ data }) => {
+  const {
+    name,
+    sprites: { front_default },
+    types,
+  } = data;
+
+  const typesList = types.map((p) => <li key={p.type.name}>{p.type.name}</li>);
 
   return (
-    <>
-      {loading ? (
-        'loading...'
-      ) : (
-        <div>
-          {data.name}
-          <img src={data.sprites.front_default} alt="" />
-          <ul>
-            {data.types.map((t) => (
-              <li key={t.type.name}>{t.type.name}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </>
+    <div>
+      {name}
+      <img src={front_default} alt={name} />
+      <ul>{typesList}</ul>
+    </div>
   );
 };
 

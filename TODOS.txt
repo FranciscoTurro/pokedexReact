@@ -1,0 +1,16 @@
+navbar that lets you go home and has an input to search a specific pokemon. it has autocompletion
+
+footer with something
+
+homepage has 10 pokemon and a button to get the next 10 and a button to get the previous 10
+(touch the api, instead of 20 write 10)
+
+it is possible to click on each pokemon to get extended information
+
+
+hiciste todo mal la concha bien de tu madre. la re puta que te pario mogolico, 1 mes entero
+leyendo como un virgen y no podes hacer un puto fetch bien. EL COMPONENTE POKEMONSMALL NO TIENE QUE 
+SER CONDICIONAL FLACO VOS ME ESTAS JODIENDO
+EMPEZA DE CERO, POKEMONSMALL TIENE QUE SER UNA FUNCION PURA PELOTUDO P-U-R-A
+
+SEEMS I HAVE TO USE THAT LOADING BULLSHIT TECHNIQUE
