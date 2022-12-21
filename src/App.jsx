@@ -10,9 +10,9 @@ const App = () => {
 
   if (loading) return <div>loading...</div>;
 
-  const pokemonList = data.results.map((p) => p.url);
+  const listURL = data.results.map((pokemon) => pokemon.url);
 
-  const test = pokemonList.map((p) => useFetch(p));
+  const test = listURL.map((url) => <PokemonSmall key={url} url={url} />);
 
   return test;
 };

@@ -1,4 +1,10 @@
-const PokemonSmall = ({ data }) => {
+import useFetch from '../hooks/useFetch';
+
+const PokemonSmall = ({ url }) => {
+  const { data, loading } = useFetch(url);
+
+  if (loading) return <div>loading...</div>;
+
   const {
     name,
     sprites: { front_default },
