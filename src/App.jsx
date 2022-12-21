@@ -12,9 +12,13 @@ const App = () => {
 
   const listURL = data.results.map((pokemon) => pokemon.url);
 
-  const test = listURL.map((url) => <PokemonSmall key={url} url={url} />);
-
-  return test;
+  return (
+    <div>
+      {listURL.map((url) => (
+        <PokemonSmall key={url} url={url} />
+      ))}
+    </div>
+  );
 };
 
 export default App;

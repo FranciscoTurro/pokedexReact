@@ -14,7 +14,7 @@ const PokemonSmall = ({ url }) => {
   const typesList = types.map((p) => <li key={p.type.name}>{p.type.name}</li>);
 
   return (
-    <div>
+    <div className="pokemon">
       {name}
       <img src={front_default} alt={name} />
       <ul>{typesList}</ul>
