@@ -1,8 +1,8 @@
 import './App.css';
-import Main from './components/Main';
+import Pokedex from './components/Pokedex';
 
 const App = () => {
-  return <Main />;
+  return <Pokedex />;
 };
 
 export default App;

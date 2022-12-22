@@ -10,7 +10,7 @@ const useFetch = (url) => {
       const result = await response.json();
       setState({ data: result, loading: false });
     })(); //IIFE
-  }, []);
+  }, [url]);
 
   return state;
 };

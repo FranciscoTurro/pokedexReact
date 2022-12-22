@@ -11,13 +11,15 @@ const PokemonSmall = ({ url }) => {
     types,
   } = data;
 
-  const typesList = types.map((p) => <li key={p.type.name}>{p.type.name}</li>);
+  const typesList = types.map((p) => (
+    <div key={p.type.name}>{p.type.name}</div>
+  ));
 
   return (
     <div className="pokemon">
-      {name}
       <img src={front_default} alt={name} />
-      <ul>{typesList}</ul>
+      <div>{name}</div>
+      {typesList}
     </div>
   );
 };
