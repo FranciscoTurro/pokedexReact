@@ -5,3 +5,5 @@ footer with something
 homepage has 10 pokemon and a button to get the next 10 and a button to get the previous 10
 
 it is possible to click on each pokemon to get extended information
+
+P4G color palette
