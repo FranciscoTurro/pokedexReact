@@ -1,4 +1,5 @@
-navbar that lets you go home and has an input to search a specific pokemon. it has autocompletion
+navbar that lets you go home and has an input to search a specific pokemon. it has autocompletion.
+searching for a pokemon and hitting enter gets you extended information as well
 
 footer with something
 
