@@ -6,4 +6,17 @@
 
 .pokemon {
   border: 2px solid black;
+  pointer-events: none;
+}
+
+.card-pokemon {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
 }

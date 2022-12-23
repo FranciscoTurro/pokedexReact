@@ -18,7 +18,7 @@ const PokemonSmall = ({ url }) => {
   ));
 
   return (
-    <Link to={`/pokemon/${id}`}>
+    <Link to={`/pokemon/${id}`} className="card-pokemon">
       <div className="pokemon">
         <img src={front_default} alt={name} />
         <div>{name}</div>

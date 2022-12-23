@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage';
 const AppRouter = () => {
   return (
     <Routes>
-      <Route index path="/" element={<HomePage />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="pokemon/:id" element={<PokemonPage />} />
     </Routes>
   );
