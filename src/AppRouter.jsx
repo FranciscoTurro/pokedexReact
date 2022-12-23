@@ -1,13 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import Pokedex from './components/Pokedex';
 import PokemonPage from './pages/PokemonPage';
+import HomePage from './pages/HomePage';
 
 const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<Pokedex />}>
-        <Route path="pokemon" element={<PokemonPage />} />
-      </Route>
+      <Route index path="/" element={<HomePage />} />
+      <Route path="pokemon/:id" element={<PokemonPage />} />
     </Routes>
   );
 };

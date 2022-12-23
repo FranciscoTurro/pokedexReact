@@ -1,4 +1,5 @@
 import useFetch from '../hooks/useFetch';
+import { Link } from 'react-router-dom';
 
 const PokemonSmall = ({ url }) => {
   const { data, loading } = useFetch(url);
@@ -17,11 +18,13 @@ const PokemonSmall = ({ url }) => {
   ));
 
   return (
-    <div className="pokemon">
-      <img src={front_default} alt={name} />
-      <div>{name}</div>
-      {typesList}
-    </div>
+    <Link to={`/pokemon/${id}`}>
+      <div className="pokemon">
+        <img src={front_default} alt={name} />
+        <div>{name}</div>
+        {typesList}
+      </div>
+    </Link>
   );
 };
 
