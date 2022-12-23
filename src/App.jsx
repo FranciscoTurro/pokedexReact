@@ -1,8 +1,9 @@
 import './App.css';
+import AppRouter from './AppRouter';
 import Pokedex from './components/Pokedex';
 
 const App = () => {
-  return <Pokedex />;
+  return <AppRouter />;
 };
 
 export default App;
