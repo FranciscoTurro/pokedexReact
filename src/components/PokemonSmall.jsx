@@ -9,6 +9,7 @@ const PokemonSmall = ({ url }) => {
     name,
     sprites: { front_default },
     types,
+    id,
   } = data;
 
   const typesList = types.map((p) => (

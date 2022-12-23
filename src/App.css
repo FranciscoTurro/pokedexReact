@@ -3,3 +3,7 @@
   grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
   grid-gap: 3em;
 }
+
+.pokemon {
+  border: 2px solid black;
+}

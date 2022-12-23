@@ -5,12 +5,14 @@ const useFetch = (url) => {
 
   useEffect(() => {
     let ignore = false;
+
     (async () => {
       //anonymous function inside useEffect, so i can use async/await
       const response = await fetch(url);
       const result = await response.json();
       if (!ignore) setState({ data: result, loading: false });
     })(); //IIFE
+
     return () => {
       ignore = true;
     };

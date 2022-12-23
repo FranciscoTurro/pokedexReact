@@ -1,13 +1,10 @@
-navbar that lets you go home and has an input to search a specific pokemon. it has autocompletion.
-searching for a pokemon and hitting enter gets you extended information as well
+navbar that lets you go home and has an input to search. it has autocompletion.
+searching for a pokemon and hitting enter gets you extended information 
 
-footer with something
-
-homepage has 10 pokemon and a button to get the next 10 and a button to get the previous 10, 
-data has a next and previous
+homepage has 10 pokemon and a button to get the next 10 and a button to get the previous 10
 
 it is possible to click on each pokemon to get extended information
 
 P4G color palette
 
-TRY to make PokemonSmall not fetch
+there is a sidebar that allows pokemon to be filtered by type (OPTIONAL)
