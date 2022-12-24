@@ -9,12 +9,12 @@ const Pokedex = () => {
 
   return (
     <>
-      <button onClick={() => loadMorePokemon()}>test</button>
       <div className="main">
         {pokemon.map((pokemon) => (
-          <PokemonSmall key={pokemon.name} pokemon={pokemon} />
+          <PokemonSmall key={pokemon.id} pokemon={pokemon} />
         ))}
       </div>
+      <button onClick={() => loadMorePokemon()}>test</button>
     </>
   );
 };

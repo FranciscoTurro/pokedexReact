@@ -1,11 +1,12 @@
-import useFetch from '../hooks/useFetch';
+import { useContext } from 'react';
+import PokemonContext from '../context/PokemonContext';
 
 const PokemonExtended = ({ id }) => {
-  const { data, loading } = useFetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  const { getPokemonByID } = useContext(PokemonContext);
 
-  if (loading) return <div>loading...</div>;
+  const test = getPokemonByID(id);
 
-  return <div>{JSON.stringify(data.name)}</div>;
+  return <div>{test.value.name}</div>;
 };
 
 export default PokemonExtended;
