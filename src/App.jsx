@@ -1,9 +1,13 @@
 import './App.css';
 import AppRouter from './AppRouter';
-import Pokedex from './components/Pokedex';
+import PokemonProvider from './context/PokemonProvider';
 
 const App = () => {
-  return <AppRouter />;
+  return (
+    <PokemonProvider>
+      <AppRouter />
+    </PokemonProvider>
+  );
 };
 
 export default App;

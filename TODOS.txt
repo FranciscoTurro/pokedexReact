@@ -9,9 +9,3 @@ it is possible to click on each pokemon to get extended information
 P4G color palette
 
 there is a sidebar that allows pokemon to be filtered by type (OPTIONAL)
-
-IMPORTANT: To slightly fix the pagination issue, try to make it so
-that the next and previous button dont exist anymore, click on a button that 
-ADDS new pokemon to the screen. really good idea, state variable that goes
-into how many the api shows. if the user clicks on a button that numbers
-goes up by like 50 or something.

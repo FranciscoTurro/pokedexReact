@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Pokedex from '../components/Pokedex';
 
 const HomePage = () => {
