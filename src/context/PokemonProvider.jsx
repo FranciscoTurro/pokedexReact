@@ -24,7 +24,7 @@ const PokemonProvider = ({ children }) => {
   };
 
   const loadMorePokemon = () => {
-    setAmount((amount) => amount + amount);
+    setAmount((amount) => amount + 50);
   };
 
   useEffect(() => {
