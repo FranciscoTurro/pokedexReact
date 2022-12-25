@@ -1,11 +1,8 @@
 navbar that lets you go home and has an input to search. it has autocompletion.
 searching for a pokemon and hitting enter gets you extended information 
 
-homepage has 10 pokemon and a button to get the next 10 and a button to get the previous 10
-find a way to add numbers to each page (page 1 is pokemon 1-20, page 2 is 21-40)
-
-it is possible to click on each pokemon to get extended information
-
 P4G color palette
 
 there is a sidebar that allows pokemon to be filtered by type (OPTIONAL)
+
+util function to capitalize first letter
