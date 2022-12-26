@@ -5,6 +5,7 @@ const Header = () => {
   return (
     <div>
       Header
+      <button onClick={() => navigate('/')}>Back to home</button>
       <Outlet />
     </div>
   );

@@ -21,6 +21,10 @@ button {
   cursor: pointer;
 }
 
+.typesContainer {
+  display: flex;
+}
+
 /* POKEMON TYPES */
 .type-water {
   display: flex;

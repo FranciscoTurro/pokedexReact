@@ -29,9 +29,7 @@ const PokemonExtended = ({ pokemon }) => {
         <div>
           <div>{`Height: ${normalizeNum(height)} m`}</div>
           <div>{`Weight: ${normalizeNum(weight)} kg`}</div>
-          <div>
-            <div>{typesList}</div>
-          </div>
+          <div className="typesContainer">{typesList}</div>
         </div>
       </div>
     </div>
