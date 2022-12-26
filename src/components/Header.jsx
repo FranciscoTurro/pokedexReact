@@ -1,11 +1,13 @@
-import { Outlet, useNavigate } from 'react-router';
+import { Outlet, useNavigate, useLocation } from 'react-router';
 
 const Header = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="header">
       Header
-      <button onClick={() => navigate('/')}>Back to home</button>
+      {useLocation().pathname !== '/' && (
+        <button onClick={() => navigate('/')}>Back to home</button>
+      )}{' '}
       <Outlet />
     </div>
   );

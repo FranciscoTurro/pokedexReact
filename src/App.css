@@ -54,6 +54,11 @@ button {
   align-items: center;
 }
 
+.header {
+  background-color: black;
+  color: white;
+}
+
 /* POKEMON TYPES */
 .type-water {
   display: flex;

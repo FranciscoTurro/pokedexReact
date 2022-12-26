@@ -5,13 +5,14 @@ import Header from './components/Header';
 
 const AppRouter = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Header />}>
-        <Route index element={<HomePage />} />
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="pokemon/:id" element={<PokemonPage />} />
-      </Route>
-      <Route path="*" element={<Navigate to="/" />} />
-    </Routes>
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </>
   );
 };
 
