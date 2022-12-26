@@ -17,7 +17,7 @@ const PokemonPage = () => {
 
   useEffect(() => {
     getOnePokemon(id);
-  }, []);
+  }, [id]);
 
   if (loading) return <div>loading...</div>;
 

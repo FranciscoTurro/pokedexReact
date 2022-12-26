@@ -1,7 +1,12 @@
 import uppercase from '../util/uppercase';
 import normalizeNum from '../util/normalizeNum';
+import { useNavigate } from 'react-router';
 
 const PokemonExtended = ({ pokemon }) => {
+  const navigate = useNavigate();
+
+  const maxNumberOfPokemon = 905;
+
   const {
     name,
     id,
@@ -22,13 +27,27 @@ const PokemonExtended = ({ pokemon }) => {
   ));
 
   return (
-    <div>
+    <div className="pokemonExtended">
+      <div className="buttonContainer">
+        {id - 1 !== 0 && (
+          <button onClick={() => navigate(`/pokemon/${id - 1}`)}>
+            Previous Pokémon
+          </button>
+        )}
+        {id + 1 <= maxNumberOfPokemon && (
+          <button onClick={() => navigate(`/pokemon/${id + 1}`)}>
+            Next Pokémon
+          </button>
+        )}
+      </div>
       <div>{`${uppercase(name)} N.º ${id}`}</div>
-      <div>
+      <div className="picInfoContainer">
         <img src={front_default} alt={`Image of Pokemon ${name}`} />
-        <div>
-          <div>{`Height: ${normalizeNum(height)} m`}</div>
-          <div>{`Weight: ${normalizeNum(weight)} kg`}</div>
+        <div className="infoContainer">
+          <div className="extendedInfo">
+            <div>{`Height: ${normalizeNum(height)} m`}</div>
+            <div>{`Weight: ${normalizeNum(weight)} kg`}</div>
+          </div>
           <div className="typesContainer">{typesList}</div>
         </div>
       </div>
