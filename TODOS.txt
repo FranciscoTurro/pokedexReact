@@ -1,8 +1,9 @@
-navbar that lets you go home and has an input to search. it has autocompletion.
+header that lets you go home and has an input to search. it has autocompletion.
 searching for a pokemon and hitting enter gets you extended information 
 
 P4G color palette
 
 there is a sidebar that allows pokemon to be filtered by type (OPTIONAL)
 
-util function to capitalize first letter
+could be cute if header had a button that changes all of the 
+sprites to the shiny variants. button renders only on homepage (OPTIONAL)

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import uppercase from '../util/uppercase';
 
 const PokemonSmall = ({ pokemon }) => {
   const {
@@ -11,7 +12,7 @@ const PokemonSmall = ({ pokemon }) => {
     <Link to={`/pokemon/${id}`} className="card-pokemon">
       <div className="pokemon">
         <img src={front_default} alt={name} />
-        <div>{name}</div>
+        <div>{uppercase(name)}</div>
       </div>
     </Link>
   );

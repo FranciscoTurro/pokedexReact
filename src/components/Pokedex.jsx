@@ -14,7 +14,7 @@ const Pokedex = () => {
           <PokemonSmall key={pokemon.id} pokemon={pokemon} />
         ))}
       </div>
-      <button onClick={() => loadMorePokemon()}>test</button>
+      <button onClick={() => loadMorePokemon()}>Load more Pokémon</button>
     </>
   );
 };
