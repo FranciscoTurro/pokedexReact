@@ -4,10 +4,11 @@ const Header = () => {
   const navigate = useNavigate();
   return (
     <div className="header">
-      Header
-      {useLocation().pathname !== '/' && (
-        <button onClick={() => navigate('/')}>Back to home</button>
-      )}{' '}
+      <img
+        src="../src/assets/img/pokeball.png"
+        alt="pokedex"
+        onClick={() => navigate('/')}
+      />
       <Outlet />
     </div>
   );

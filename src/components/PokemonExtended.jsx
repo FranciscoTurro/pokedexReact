@@ -3,6 +3,7 @@ import normalizeNum from '../util/normalizeNum';
 import { useNavigate } from 'react-router';
 import { useContext } from 'react';
 import PokemonContext from '../context/PokemonContext';
+import InfoDiv from './InfoDiv';
 
 const PokemonExtended = ({ pokemon }) => {
   const navigate = useNavigate();
@@ -48,39 +49,30 @@ const PokemonExtended = ({ pokemon }) => {
 
   return (
     <div className="pokemonExtended">
-      <div className="buttonContainer">
-        {id - 1 !== 0 && (
-          <button onClick={() => navigate(`/pokemon/${id - 1}`)}>
-            Previous Pokémon
-          </button>
-        )}
-        {id + 1 <= maxNumberOfPokemon && (
-          <button onClick={() => navigate(`/pokemon/${id + 1}`)}>
-            Next Pokémon
-          </button>
-        )}
+      <div className="nameButtonContainer">
+        <button
+          disabled={id - 1 === 0}
+          onClick={() => navigate(`/pokemon/${id - 1}`)}
+        >
+          Previous Pokémon
+        </button>
+        <div className="pokemonName">{`${uppercase(name)} N.º ${id}`}</div>
+
+        <button
+          disabled={id + 1 > maxNumberOfPokemon}
+          onClick={() => navigate(`/pokemon/${id + 1}`)}
+        >
+          Next Pokémon
+        </button>
       </div>
-      <div>{`${uppercase(name)} N.º ${id}`}</div>
       <div className="picInfoContainer">
         <img src={front_default} alt={`Image of Pokemon ${name}`} />
         <div className="infoContainer">
           <div className="extendedInfo">
-            <div className="infoDiv">
-              <div className="infoTitle">Height</div>
-              <div className="infoInfo">{normalizeNum(height)} m</div>
-            </div>
-            <div className="infoDiv">
-              <div className="infoTitle">Main ability</div>
-              <div className="infoInfo">{uppercase(mainAbility)}</div>
-            </div>
-            <div className="infoDiv">
-              <div className="infoTitle">Weight</div>
-              <div className="infoInfo">{normalizeNum(weight)} kg</div>
-            </div>
-            <div className="infoDiv">
-              <div className="infoTitle">Main stats</div>
-              <div className="infoInfo">{statsList}</div>
-            </div>
+            <InfoDiv title={'Height'} info={normalizeNum(height) + ' m'} />
+            <InfoDiv title={'Main ability'} info={uppercase(mainAbility)} />
+            <InfoDiv title={'Weight'} info={normalizeNum(weight) + ' kg'} />
+            <InfoDiv title={'Main stats'} info={statsList} />
           </div>
           <div className="typesContainer">{typesList}</div>
         </div>

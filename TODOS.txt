@@ -13,6 +13,7 @@ default ones
 add a button which opens a modal (?) and shows a description
 of the main ability. has to fetch it (OPTIONAL)
 
-FONT IS FLEXO MEDIUM
-
 make the PokemonSmall look good on the pokedex
+
+add content to the bottom of pokemonExtended, too much unused space
+

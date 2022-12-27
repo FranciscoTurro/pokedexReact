@@ -8,14 +8,14 @@ const Pokedex = () => {
   if (loading) return <div>loading...</div>;
 
   return (
-    <>
-      <div className="main">
+    <div className="main">
+      <div className="pokedex">
         {pokemon.map((pokemon) => (
           <PokemonSmall key={pokemon.id} pokemon={pokemon} />
         ))}
       </div>
       <button onClick={() => loadMorePokemon()}>Load more Pokémon</button>
-    </>
+    </div>
   );
 };
 
