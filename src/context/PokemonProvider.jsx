@@ -5,6 +5,7 @@ const PokemonProvider = ({ children }) => {
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(true);
   const [amount, setAmount] = useState(0);
+  const [shiny, setShiny] = useState(false);
 
   const maxNumberOfPokemon = 905;
 
@@ -29,13 +30,24 @@ const PokemonProvider = ({ children }) => {
     setAmount((amount) => amount + 50);
   };
 
+  const toggleShiny = () => {
+    setShiny(!shiny);
+  };
+
   useEffect(() => {
     getPokemon();
   }, [amount]);
 
   return (
     <PokemonContext.Provider
-      value={{ maxNumberOfPokemon, pokemon, loading, loadMorePokemon }}
+      value={{
+        shiny,
+        toggleShiny,
+        maxNumberOfPokemon,
+        pokemon,
+        loading,
+        loadMorePokemon,
+      }}
     >
       {children}
     </PokemonContext.Provider>

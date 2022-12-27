@@ -5,11 +5,6 @@ P4G color palette
 
 there is a sidebar that allows pokemon to be filtered by type (OPTIONAL)
 
-button that changes all of the 
-sprites to the shiny variants. button renders only on homepage. the button re-renders pokedex 
-and sends a prop which is a boolean. if the boolean is true it renders the shiny sprites not the
-default ones
-
 add a button which opens a modal (?) and shows a description
 of the main ability. has to fetch it (OPTIONAL)
 

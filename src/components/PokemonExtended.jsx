@@ -25,7 +25,12 @@ const PokemonExtended = ({ pokemon }) => {
     },
   } = pokemon;
 
-  const mainAbility = abilities[0].ability.name;
+  let mainAbility;
+  if (abilities[0]) {
+    mainAbility = abilities[0].ability.name;
+  } else {
+    mainAbility = 'None';
+  }
 
   const typesList = types.map((p) => (
     <div className={`type-${p.type.name}`} key={p.type.name}>
@@ -56,6 +61,7 @@ const PokemonExtended = ({ pokemon }) => {
         >
           Previous Pokémon
         </button>
+
         <div className="pokemonName">{`${uppercase(name)} N.º ${id}`}</div>
 
         <button
