@@ -1,12 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: black;
+  color: white;
+  position: fixed;
+  width: 100%;
+  height: 3em;
+}
+
 .main {
+  padding: 1em;
+  padding-top: 3.5em; /*temporary workaround to have the header show up at all times and not intersect with other things */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
   grid-gap: 3em;
 }
 
 .pokemon {
-  border: 2px solid black;
   pointer-events: none;
+}
+
+.pokeIMG {
+  width: 8em;
 }
 
 .card-pokemon {
@@ -30,10 +49,11 @@ button {
 }
 
 .pokemonExtended {
+  padding-top: 3.5em; /*temporary workaround to have the header show up at all times and not intersect with other things */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3em;
+  gap: 1em;
 }
 
 .infoContainer {
@@ -59,11 +79,6 @@ button {
 
 .infoInfo {
   font-size: 125%;
-}
-
-.header {
-  background-color: black;
-  color: white;
 }
 
 .infoTitle {
