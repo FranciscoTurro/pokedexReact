@@ -10,9 +10,10 @@ const PokemonProvider = ({ children }) => {
   const maxNumberOfPokemon = 905;
 
   const getPokemon = async () => {
-    const res = await fetch(
-      `https://pokeapi.co/api/v2/pokemon?limit=50&offset=${amount}`
-    );
+    let url = `https://pokeapi.co/api/v2/pokemon?limit=50&offset=${amount}`;
+
+    const res = await fetch(url);
+
     const data = await res.json();
 
     const promises = data.results.map(async (pokemon) => {

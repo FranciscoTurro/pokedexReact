@@ -1,9 +1,9 @@
+there is a sidebar that allows pokemon to be filtered by type (OPTIONAL)
+
 header that lets you go home and has an input to search. it has autocompletion.
 searching for a pokemon and hitting enter gets you extended information 
 
 P4G color palette
-
-there is a sidebar that allows pokemon to be filtered by type (OPTIONAL)
 
 add a button which opens a modal (?) and shows a description
 of the main ability. has to fetch it (OPTIONAL)
@@ -12,3 +12,6 @@ make the PokemonSmall look good on the pokedex
 
 add content to the bottom of pokemonExtended, too much unused space
 
+make the shiny sprites button not look like shit. toggle or something
+
+should not be able to load more pokemon after having maxNumberOfPokemon

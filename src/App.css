@@ -24,12 +24,8 @@
   cursor: pointer;
 }
 
-.main {
-  padding-top: 4em; /*temporary workaround to have the header show up at all times and not intersect with other things */
-}
-
 .pokedex {
-  padding: 1em;
+  padding: 3em 1em 1em 1em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
   grid-gap: 3em;
