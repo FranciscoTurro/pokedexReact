@@ -15,12 +15,13 @@ const PokemonExtended = ({ pokemon }) => {
     height,
     weight,
     types,
+    abilities,
+    stats,
     sprites: {
       other: {
         'official-artwork': { front_default },
       },
     },
-    abilities,
   } = pokemon;
 
   const mainAbility = abilities[0].ability.name;
@@ -30,6 +31,20 @@ const PokemonExtended = ({ pokemon }) => {
       {uppercase(p.type.name)}
     </div>
   ));
+
+  const statsList = stats.map((stat) => {
+    if (
+      stat.stat.name === 'special-attack' ||
+      stat.stat.name === 'special-defense' ||
+      stat.stat.name === 'speed'
+    )
+      return;
+    return (
+      <div key={stat.stat.name}>
+        {uppercase(stat.stat.name)}: {stat.base_stat}
+      </div>
+    );
+  });
 
   return (
     <div className="pokemonExtended">
@@ -55,12 +70,16 @@ const PokemonExtended = ({ pokemon }) => {
               <div className="infoInfo">{normalizeNum(height)} m</div>
             </div>
             <div className="infoDiv">
-              <div className="infoTitle">Ability</div>
+              <div className="infoTitle">Main ability</div>
               <div className="infoInfo">{uppercase(mainAbility)}</div>
             </div>
             <div className="infoDiv">
               <div className="infoTitle">Weight</div>
               <div className="infoInfo">{normalizeNum(weight)} kg</div>
+            </div>
+            <div className="infoDiv">
+              <div className="infoTitle">Main stats</div>
+              <div className="infoInfo">{statsList}</div>
             </div>
           </div>
           <div className="typesContainer">{typesList}</div>
