@@ -7,3 +7,10 @@ there is a sidebar that allows pokemon to be filtered by type (OPTIONAL)
 
 could be cute if header had a button that changes all of the 
 sprites to the shiny variants. button renders only on homepage (OPTIONAL)
+
+add a button which opens a modal (?) and shows a description
+of the main ability. has to fetch it
+
+FONT IS FLEXO MEDIUM
+
+make the PokemonSmall way bigger, like 3 per row

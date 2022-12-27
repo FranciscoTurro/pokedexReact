@@ -1,11 +1,13 @@
 import uppercase from '../util/uppercase';
 import normalizeNum from '../util/normalizeNum';
 import { useNavigate } from 'react-router';
+import { useContext } from 'react';
+import PokemonContext from '../context/PokemonContext';
 
 const PokemonExtended = ({ pokemon }) => {
   const navigate = useNavigate();
 
-  const maxNumberOfPokemon = 905;
+  const { maxNumberOfPokemon } = useContext(PokemonContext);
 
   const {
     name,
@@ -18,7 +20,10 @@ const PokemonExtended = ({ pokemon }) => {
         'official-artwork': { front_default },
       },
     },
+    abilities,
   } = pokemon;
+
+  const mainAbility = abilities[0].ability.name;
 
   const typesList = types.map((p) => (
     <div className={`type-${p.type.name}`} key={p.type.name}>
@@ -45,8 +50,18 @@ const PokemonExtended = ({ pokemon }) => {
         <img src={front_default} alt={`Image of Pokemon ${name}`} />
         <div className="infoContainer">
           <div className="extendedInfo">
-            <div>{`Height: ${normalizeNum(height)} m`}</div>
-            <div>{`Weight: ${normalizeNum(weight)} kg`}</div>
+            <div className="infoDiv">
+              <div className="infoTitle">Height</div>
+              <div className="infoInfo">{normalizeNum(height)} m</div>
+            </div>
+            <div className="infoDiv">
+              <div className="infoTitle">Ability</div>
+              <div className="infoInfo">{uppercase(mainAbility)}</div>
+            </div>
+            <div className="infoDiv">
+              <div className="infoTitle">Weight</div>
+              <div className="infoInfo">{normalizeNum(weight)} kg</div>
+            </div>
           </div>
           <div className="typesContainer">{typesList}</div>
         </div>

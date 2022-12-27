@@ -6,6 +6,8 @@ const PokemonProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [amount, setAmount] = useState(50);
 
+  const maxNumberOfPokemon = 905;
+
   const getPokemon = async () => {
     const res = await fetch(
       `https://pokeapi.co/api/v2/pokemon?limit=${amount}&offset=0`
@@ -32,7 +34,9 @@ const PokemonProvider = ({ children }) => {
   }, [amount]);
 
   return (
-    <PokemonContext.Provider value={{ pokemon, loading, loadMorePokemon }}>
+    <PokemonContext.Provider
+      value={{ maxNumberOfPokemon, pokemon, loading, loadMorePokemon }}
+    >
       {children}
     </PokemonContext.Provider>
   );
