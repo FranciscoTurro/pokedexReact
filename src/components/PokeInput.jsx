@@ -30,6 +30,11 @@ const PokeInput = ({ array }) => {
     const value = event.target.value;
     setInputValue(value);
 
+    if (value === '') {
+      setSuggestions([]);
+      return;
+    }
+
     const filteredSuggestions = array.filter((suggestion) =>
       suggestion.name.toLowerCase().startsWith(value.toLowerCase())
     );
@@ -77,7 +82,6 @@ const PokeInput = ({ array }) => {
       <input
         type="text"
         value={inputValue}
-        onClick={handleInputChange}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
         ref={inputRef}
