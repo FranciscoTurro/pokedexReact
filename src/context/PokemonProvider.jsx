@@ -4,12 +4,14 @@ import PokemonContext from './PokemonContext';
 const PokemonProvider = ({ children }) => {
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [buttonStopper, setButtonStopper] = useState(true);
   const [amount, setAmount] = useState(0);
   const [shiny, setShiny] = useState(false);
 
   const maxNumberOfPokemon = 905;
 
-  const getPokemon = async (ignore) => {
+  const getPokemon = async () => {
+    setButtonStopper(true);
     let url = `https://pokeapi.co/api/v2/pokemon?limit=50&offset=${amount}`;
 
     const res = await fetch(url);
@@ -25,6 +27,7 @@ const PokemonProvider = ({ children }) => {
 
     setPokemon([...pokemon, ...results]);
     setLoading(false);
+    setButtonStopper(false);
   };
 
   const loadMorePokemon = () => {
@@ -48,6 +51,7 @@ const PokemonProvider = ({ children }) => {
         pokemon,
         loading,
         loadMorePokemon,
+        buttonStopper,
       }}
     >
       {children}
