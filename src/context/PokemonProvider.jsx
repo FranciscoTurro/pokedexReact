@@ -1,18 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import PokemonContext from './PokemonContext';
 
 const PokemonProvider = ({ children }) => {
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(true);
   const [buttonStopper, setButtonStopper] = useState(true);
-  const [amount, setAmount] = useState(0);
+  const [offset, setOffset] = useState(0);
+  const [amount, setAmount] = useState(50);
   const [shiny, setShiny] = useState(false);
 
   const maxNumberOfPokemon = 905;
 
   const getPokemon = async () => {
     setButtonStopper(true);
-    let url = `https://pokeapi.co/api/v2/pokemon?limit=50&offset=${amount}`;
+    let url = `https://pokeapi.co/api/v2/pokemon?limit=${amount}&offset=${offset}`;
 
     const res = await fetch(url);
 
@@ -31,7 +32,7 @@ const PokemonProvider = ({ children }) => {
   };
 
   const loadMorePokemon = () => {
-    setAmount((amount) => amount + 50);
+    setOffset((offset) => offset + amount);
   };
 
   const toggleShiny = () => {
@@ -40,7 +41,7 @@ const PokemonProvider = ({ children }) => {
 
   useEffect(() => {
     getPokemon();
-  }, [amount]);
+  }, [offset]);
 
   return (
     <PokemonContext.Provider
@@ -52,6 +53,7 @@ const PokemonProvider = ({ children }) => {
         loading,
         loadMorePokemon,
         buttonStopper,
+        amount,
       }}
     >
       {children}

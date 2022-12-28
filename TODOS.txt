@@ -1,19 +1,23 @@
 there is a sidebar that allows pokemon to be filtered by type (OPTIONAL)
 
+add a button which opens a modal (?) and shows a description
+of the main ability. has to fetch it (OPTIONAL)
+
+OPTIONAL, FOR ENDGAME (lol). pokemon provider uses way too much state, change it to a reducer
+
 header that lets you go home and has an input to search. it has autocompletion.
 searching for a pokemon and hitting enter gets you extended information 
 
 P4G color palette
 
-add a button which opens a modal (?) and shows a description
-of the main ability. has to fetch it (OPTIONAL)
-
 make the PokemonSmall look good on the pokedex
 
-add content to the bottom of pokemonExtended, too much unused space
+add content to the bottom of pokemonExtended, too much unused space. evolution chain?
+1. Fetch the pokemon-species: https://pokeapi.co/api/v2/pokemon-species/ivysaur
+2. Look at .evolution_chain -> https://pokeapi.co/api/v2/evolution-chain/1/
+3. Fetch the chain: https://pokeapi.co/api/v2/evolution-chain/1/
+4. Parse the JSON and get the full list of evolutions.
 
 make the shiny sprites button a toggle
-
-make a GOOD standard button for load more pokemon and prev/next
 
 maybe a linter, but check on reddit first

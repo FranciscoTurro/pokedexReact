@@ -56,6 +56,7 @@ const PokemonExtended = ({ pokemon }) => {
     <div className="pokemonExtended">
       <div className="nameButtonContainer">
         <button
+          className="btn"
           disabled={id - 1 === 0}
           onClick={() => navigate(`/pokemon/${id - 1}`)}
         >
@@ -65,6 +66,7 @@ const PokemonExtended = ({ pokemon }) => {
         <div className="pokemonName">{`${uppercase(name)} N.º ${id}`}</div>
 
         <button
+          className="btn"
           disabled={id + 1 > maxNumberOfPokemon}
           onClick={() => navigate(`/pokemon/${id + 1}`)}
         >

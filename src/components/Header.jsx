@@ -3,15 +3,21 @@ import { useContext, useState } from 'react';
 import PokemonContext from '../context/PokemonContext';
 
 const Header = () => {
-  const { toggleShiny, loadMorePokemon, maxNumberOfPokemon, buttonStopper } =
-    useContext(PokemonContext);
+  const {
+    toggleShiny,
+    loadMorePokemon,
+    maxNumberOfPokemon,
+    buttonStopper,
+    amount,
+    shiny,
+  } = useContext(PokemonContext);
 
-  const [pokemonLoaded, setPokemonLoaded] = useState(50);
+  const [pokemonLoaded, setPokemonLoaded] = useState(amount);
 
   const navigate = useNavigate();
 
   const handleClick = () => {
-    setPokemonLoaded((pokemonLoaded) => pokemonLoaded + 50);
+    setPokemonLoaded((pokemonLoaded) => pokemonLoaded + amount);
     loadMorePokemon();
   };
 
@@ -22,16 +28,23 @@ const Header = () => {
         alt="pokedex"
         onClick={() => navigate('/')}
       />
-      <button disabled={useLocation().pathname !== '/'} onClick={toggleShiny}>
-        Shiny sprites
-      </button>
-      <button
-        disabled={pokemonLoaded > maxNumberOfPokemon || buttonStopper}
-        onClick={handleClick}
-      >
-        Load more Pokémon
-      </button>
+      <div className="headerBtnContainer">
+        <button
+          className="btn"
+          disabled={useLocation().pathname !== '/'}
+          onClick={toggleShiny}
+        >
+          {shiny ? 'Regular sprites' : 'Shiny sprites'}
+        </button>
 
+        <button
+          className="btn"
+          disabled={pokemonLoaded > maxNumberOfPokemon || buttonStopper}
+          onClick={handleClick}
+        >
+          Load more Pokémon
+        </button>
+      </div>
       <Outlet />
     </div>
   );
