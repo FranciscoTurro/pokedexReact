@@ -3,8 +3,7 @@ import { useContext, useState } from 'react';
 import PokemonContext from '../context/PokemonContext';
 
 const Header = () => {
-  const { toggleShiny, loadMorePokemon, stopFetching } =
-    useContext(PokemonContext);
+  const { toggleShiny, loadMorePokemon } = useContext(PokemonContext);
 
   const navigate = useNavigate();
 
@@ -18,7 +17,7 @@ const Header = () => {
       {useLocation().pathname === '/' && (
         <button onClick={toggleShiny}>Shiny sprites</button>
       )}
-      {useLocation().pathname === '/' && !stopFetching && (
+      {useLocation().pathname === '/' && (
         <button onClick={() => loadMorePokemon()}>Load more Pokémon</button>
       )}
 

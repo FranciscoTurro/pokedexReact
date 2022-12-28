@@ -6,11 +6,10 @@ const PokemonProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [amount, setAmount] = useState(0);
   const [shiny, setShiny] = useState(false);
-  const [stopFetching, setStopFetching] = useState(false);
 
   const maxNumberOfPokemon = 905;
 
-  const getPokemon = async () => {
+  const getPokemon = async (ignore) => {
     let url = `https://pokeapi.co/api/v2/pokemon?limit=50&offset=${amount}`;
 
     const res = await fetch(url);
@@ -36,10 +35,6 @@ const PokemonProvider = ({ children }) => {
     setShiny(!shiny);
   };
 
-  const stopper = () => {
-    setStopFetching(true);
-  };
-
   useEffect(() => {
     getPokemon();
   }, [amount]);
@@ -53,8 +48,6 @@ const PokemonProvider = ({ children }) => {
         pokemon,
         loading,
         loadMorePokemon,
-        stopFetching,
-        stopper,
       }}
     >
       {children}

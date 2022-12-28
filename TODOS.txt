@@ -14,4 +14,8 @@ add content to the bottom of pokemonExtended, too much unused space
 
 make the shiny sprites button not look like shit. toggle or something
 
-should not be able to load more pokemon after having maxNumberOfPokemon
+spam load more pokemon and the bugs start to show. probably something fucky going on with
+a useEffect or a component that isn't pure.
+right now the pokedex stops updating after rendering a pokemon with an id greater than or equal to
+905, but the fetches keep happening.
+i want to disable the button when 905 pokemon have been fetched
