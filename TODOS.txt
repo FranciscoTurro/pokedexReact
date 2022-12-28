@@ -8,7 +8,7 @@ OPTIONAL, FOR ENDGAME (lol). pokemon provider uses way too much state, change it
 header that lets you go home and has an input to search. it has autocompletion.
 searching for a pokemon and hitting enter gets you extended information 
 
-P4G color palette
+P4G color palette (?)
 
 make the PokemonSmall look good on the pokedex
 

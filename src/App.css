@@ -9,6 +9,49 @@
   box-sizing: border-box;
   font-family: Flexo;
 }
+/* test */
+
+.suggestion-input {
+  position: relative;
+}
+
+.suggestion-input input {
+  width: 300px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 10px;
+  color: black;
+}
+
+.suggestion-input ul {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.suggestion-input li {
+  cursor: pointer;
+  padding: 10px;
+  color: black;
+}
+
+.suggestion-input li.selected {
+  background-color: red;
+}
+
+.suggestion-input li:hover {
+  background-color: #eee;
+}
+/* test */
 
 .header {
   background-color: black;

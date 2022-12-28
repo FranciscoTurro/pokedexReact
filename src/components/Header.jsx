@@ -1,6 +1,7 @@
 import { Outlet, useNavigate, useLocation } from 'react-router';
 import { useContext, useState } from 'react';
 import PokemonContext from '../context/PokemonContext';
+import PokeInput from './PokeInput';
 
 const Header = () => {
   const {
@@ -20,6 +21,8 @@ const Header = () => {
     setPokemonLoaded((pokemonLoaded) => pokemonLoaded + amount);
     loadMorePokemon();
   };
+
+  const test = ['bulbasaur', 'squirtle', 'charmander', 'pikachu'];
 
   return (
     <div className="header">
@@ -44,6 +47,10 @@ const Header = () => {
         >
           Load more Pokémon
         </button>
+
+        <div className="suggestion-input">
+          <PokeInput array={test} />
+        </div>
       </div>
       <Outlet />
     </div>
