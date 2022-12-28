@@ -30,6 +30,7 @@ html {
   display: flex;
   align-items: center;
   gap: 5em;
+  width: 25em;
 }
 
 .header img {

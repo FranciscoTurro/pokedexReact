@@ -32,21 +32,21 @@ const Header = () => {
           onClick={() => navigate('/')}
         />
         <div className="headerBtnContainer">
-          <button
-            className="btn"
-            disabled={useLocation().pathname !== '/'}
-            onClick={toggleShiny}
-          >
-            {shiny ? 'Regular sprites' : 'Shiny sprites'}
-          </button>
+          {useLocation().pathname === '/' && (
+            <button className="btn" onClick={toggleShiny}>
+              {shiny ? 'Regular sprites' : 'Shiny sprites'}
+            </button>
+          )}
 
-          <button
-            className="btn"
-            disabled={pokemonLoaded > maxNumberOfPokemon || buttonStopper}
-            onClick={handleClick}
-          >
-            Load more Pokémon
-          </button>
+          {useLocation().pathname === '/' && (
+            <button
+              className="btn"
+              disabled={pokemonLoaded > maxNumberOfPokemon || buttonStopper}
+              onClick={handleClick}
+            >
+              Load more Pokémon
+            </button>
+          )}
         </div>
       </div>
       <div className="suggestion-input">

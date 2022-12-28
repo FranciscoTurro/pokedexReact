@@ -66,7 +66,7 @@ const PokeInput = ({ array }) => {
   };
 
   const handleSuggestionClick = (suggestion) => {
-    setInputValue(suggestion.name);
+    setInputValue('');
     navigate(`/pokemon/${suggestion.id}`);
     setSuggestions([]);
     setSelectedIndex(-1);
