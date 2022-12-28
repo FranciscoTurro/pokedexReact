@@ -11,6 +11,7 @@ const Header = () => {
     buttonStopper,
     amount,
     shiny,
+    pokemonNames,
   } = useContext(PokemonContext);
 
   const [pokemonLoaded, setPokemonLoaded] = useState(amount);
@@ -21,8 +22,6 @@ const Header = () => {
     setPokemonLoaded((pokemonLoaded) => pokemonLoaded + amount);
     loadMorePokemon();
   };
-
-  const test = ['bulbasaur', 'squirtle', 'charmander', 'pikachu'];
 
   return (
     <div className="header">
@@ -51,7 +50,7 @@ const Header = () => {
         </div>
       </div>
       <div className="suggestion-input">
-        <PokeInput array={test} />
+        <PokeInput array={pokemonNames} />
       </div>
       <Outlet />
     </div>

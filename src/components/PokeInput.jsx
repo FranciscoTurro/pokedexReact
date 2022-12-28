@@ -1,6 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
+import uppercase from '../util/uppercase';
+import { useNavigate } from 'react-router';
 
 const PokeInput = ({ array }) => {
+  const navigate = useNavigate();
+
   const [inputValue, setInputValue] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -8,7 +12,11 @@ const PokeInput = ({ array }) => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (inputRef.current && !inputRef.current.contains(event.target)) {
+      if (
+        inputRef.current &&
+        !inputRef.current.contains(event.target) &&
+        !event.target.closest('ul')
+      ) {
         setSuggestions([]);
       }
     };
@@ -23,7 +31,7 @@ const PokeInput = ({ array }) => {
     setInputValue(value);
 
     const filteredSuggestions = array.filter((suggestion) =>
-      suggestion.toLowerCase().startsWith(value.toLowerCase())
+      suggestion.name.toLowerCase().startsWith(value.toLowerCase())
     );
     setSuggestions(filteredSuggestions);
     setSelectedIndex(-1);
@@ -43,7 +51,14 @@ const PokeInput = ({ array }) => {
     } else if (event.key === 'Enter') {
       event.preventDefault();
       if (selectedIndex >= 0) {
-        setInputValue(suggestions[selectedIndex]);
+        setInputValue('');
+        navigate(
+          `/pokemon/${
+            array.find(
+              (element) => element.name === suggestions[selectedIndex].name
+            ).id
+          }`
+        );
         setSuggestions([]);
         setSelectedIndex(-1);
       }
@@ -51,7 +66,8 @@ const PokeInput = ({ array }) => {
   };
 
   const handleSuggestionClick = (suggestion) => {
-    setInputValue(suggestion);
+    setInputValue(suggestion.name);
+    navigate(`/pokemon/${suggestion.id}`);
     setSuggestions([]);
     setSelectedIndex(-1);
   };
@@ -70,11 +86,11 @@ const PokeInput = ({ array }) => {
         <ul>
           {suggestions.map((suggestion, index) => (
             <li
-              key={suggestion}
+              key={suggestion.id}
               onMouseDown={() => handleSuggestionClick(suggestion)}
               className={index === selectedIndex ? 'selected' : ''}
             >
-              {suggestion}
+              {uppercase(suggestion.name)}
             </li>
           ))}
         </ul>

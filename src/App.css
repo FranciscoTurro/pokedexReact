@@ -164,6 +164,8 @@ html {
 }
 
 .suggestion-input ul {
+  overflow-y: auto;
+  max-height: 10em;
   position: absolute;
   top: calc(100% + 10px);
   left: 0;

@@ -8,11 +8,13 @@ const PokemonProvider = ({ children }) => {
   const [offset, setOffset] = useState(0);
   const [amount, setAmount] = useState(50);
   const [shiny, setShiny] = useState(false);
+  const [pokemonNames, setPokemonNames] = useState([]);
 
   const maxNumberOfPokemon = 905;
 
   const getPokemon = async () => {
     setButtonStopper(true);
+
     let url = `https://pokeapi.co/api/v2/pokemon?limit=${amount}&offset=${offset}`;
 
     const res = await fetch(url);
@@ -31,6 +33,21 @@ const PokemonProvider = ({ children }) => {
     setButtonStopper(false);
   };
 
+  const getAllPokemonNames = async () => {
+    let url = `https://pokeapi.co/api/v2/pokemon?limit=${maxNumberOfPokemon}`;
+
+    const res = await fetch(url);
+
+    const data = await res.json();
+
+    setPokemonNames(
+      data.results.map((pokemon, index) => ({
+        name: pokemon.name,
+        id: index + 1,
+      }))
+    );
+  };
+
   const loadMorePokemon = () => {
     setOffset((offset) => offset + amount);
   };
@@ -43,6 +60,10 @@ const PokemonProvider = ({ children }) => {
     getPokemon();
   }, [offset]);
 
+  useEffect(() => {
+    getAllPokemonNames();
+  }, []);
+
   return (
     <PokemonContext.Provider
       value={{
@@ -54,6 +75,7 @@ const PokemonProvider = ({ children }) => {
         loadMorePokemon,
         buttonStopper,
         amount,
+        pokemonNames,
       }}
     >
       {children}
