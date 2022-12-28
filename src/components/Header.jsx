@@ -26,31 +26,32 @@ const Header = () => {
 
   return (
     <div className="header">
-      <img
-        src="../src/assets/img/pokeball.png"
-        alt="pokedex"
-        onClick={() => navigate('/')}
-      />
-      <div className="headerBtnContainer">
-        <button
-          className="btn"
-          disabled={useLocation().pathname !== '/'}
-          onClick={toggleShiny}
-        >
-          {shiny ? 'Regular sprites' : 'Shiny sprites'}
-        </button>
+      <div className="headerBtnLogoContainer">
+        <img
+          src="../src/assets/img/pokeball.png"
+          alt="pokedex"
+          onClick={() => navigate('/')}
+        />
+        <div className="headerBtnContainer">
+          <button
+            className="btn"
+            disabled={useLocation().pathname !== '/'}
+            onClick={toggleShiny}
+          >
+            {shiny ? 'Regular sprites' : 'Shiny sprites'}
+          </button>
 
-        <button
-          className="btn"
-          disabled={pokemonLoaded > maxNumberOfPokemon || buttonStopper}
-          onClick={handleClick}
-        >
-          Load more Pokémon
-        </button>
-
-        <div className="suggestion-input">
-          <PokeInput array={test} />
+          <button
+            className="btn"
+            disabled={pokemonLoaded > maxNumberOfPokemon || buttonStopper}
+            onClick={handleClick}
+          >
+            Load more Pokémon
+          </button>
         </div>
+      </div>
+      <div className="suggestion-input">
+        <PokeInput array={test} />
       </div>
       <Outlet />
     </div>
