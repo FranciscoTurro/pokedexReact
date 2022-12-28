@@ -12,10 +12,8 @@ make the PokemonSmall look good on the pokedex
 
 add content to the bottom of pokemonExtended, too much unused space
 
-make the shiny sprites button not look like shit. toggle or something
+make the shiny sprites button a toggle
 
-spam load more pokemon and the bugs start to show. probably something fucky going on with
-a useEffect or a component that isn't pure.
-right now the pokedex stops updating after rendering a pokemon with an id greater than or equal to
-905, but the fetches keep happening.
-i want to disable the button when 905 pokemon have been fetched
+make a GOOD standard button for load more pokemon and prev/next
+
+maybe a linter, but check on reddit first
