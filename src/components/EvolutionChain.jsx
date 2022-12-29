@@ -20,6 +20,7 @@ const EvolutionChain = ({ pokemon }) => {
     const evolutionChain = await evolutionChainResponse.json();
 
     const evolutionLine = [];
+
     let currentEvolution = evolutionChain.chain;
     while (currentEvolution !== null) {
       evolutionLine.push(currentEvolution.species.name);
@@ -32,9 +33,10 @@ const EvolutionChain = ({ pokemon }) => {
         const data = await res.json();
         return data;
       })
-    ).then((array) => setEvolutionLine(array));
-
-    setIsLoading(false);
+    ).then((array) => {
+      setEvolutionLine(array);
+      setIsLoading(false);
+    });
   };
 
   useEffect(() => {
@@ -44,7 +46,7 @@ const EvolutionChain = ({ pokemon }) => {
   if (isLoading) return <div>loading...</div>;
 
   return (
-    <div>
+    <div className="evolutionChain">
       {evolutionLine.map((pokemon) => {
         return (
           <PokemonSmall key={pokemon.id} isShiny={false} pokemon={pokemon} />
