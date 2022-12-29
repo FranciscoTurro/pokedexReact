@@ -8,7 +8,7 @@ const PokemonPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [pokemon, setPokemon] = useState();
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const { maxNumberOfPokemon } = useContext(PokemonContext);
 
   if (id > maxNumberOfPokemon || id < 1) navigate('/');
@@ -17,7 +17,7 @@ const PokemonPage = () => {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const data = await res.json();
 
-    setLoading(false);
+    setIsLoading(false);
     setPokemon(data);
   };
 
@@ -25,7 +25,7 @@ const PokemonPage = () => {
     getOnePokemon(id);
   }, [id]);
 
-  if (loading) return <div>loading...</div>;
+  if (isLoading) return <div>loading...</div>;
 
   return <PokemonExtended pokemon={pokemon} />;
 };

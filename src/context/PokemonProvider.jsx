@@ -2,19 +2,19 @@ import { useEffect, useState, useRef } from 'react';
 import PokemonContext from './PokemonContext';
 
 const PokemonProvider = ({ children }) => {
-  const amount = 50;
+  const amount = 50; //the amount of pokemon i will be loading
   const maxNumberOfPokemon = 905;
 
-  const [pokemon, setPokemon] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [buttonStopper, setButtonStopper] = useState(true);
-  const [offset, setOffset] = useState(0);
-  const [shiny, setShiny] = useState(false);
+  const [pokemonList, setPokemonList] = useState([]);
   const [pokemonNames, setPokemonNames] = useState([]);
-  const [pokemonLoaded, setPokemonLoaded] = useState(amount);
+  const [pokemonLoadedAmount, setPokemonLoadedAmount] = useState(amount);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [isShiny, setIsShiny] = useState(false);
+  const [offset, setOffset] = useState(0);
 
   const getPokemon = async () => {
-    setButtonStopper(true);
+    setIsButtonDisabled(true);
 
     let url = `https://pokeapi.co/api/v2/pokemon?limit=${amount}&offset=${offset}`;
 
@@ -29,9 +29,9 @@ const PokemonProvider = ({ children }) => {
     });
     const results = await Promise.all(promises);
 
-    setPokemon([...pokemon, ...results]);
-    setLoading(false);
-    setButtonStopper(false);
+    setPokemonList([...pokemonList, ...results]);
+    setIsLoading(false);
+    setIsButtonDisabled(false);
   };
 
   const getAllPokemonNames = async () => {
@@ -54,12 +54,12 @@ const PokemonProvider = ({ children }) => {
   };
 
   const handleLoadMoreClick = () => {
-    setPokemonLoaded((pokemonLoaded) => pokemonLoaded + amount);
+    setPokemonLoadedAmount((pokemonLoaded) => pokemonLoaded + amount);
     loadMorePokemon();
   };
 
   const toggleShiny = () => {
-    setShiny(!shiny);
+    setIsShiny(!isShiny);
   };
 
   useEffect(() => {
@@ -73,16 +73,16 @@ const PokemonProvider = ({ children }) => {
   return (
     <PokemonContext.Provider
       value={{
-        shiny,
+        isShiny,
         toggleShiny,
         maxNumberOfPokemon,
-        pokemon,
-        loading,
+        pokemonList,
+        isLoading,
         loadMorePokemon,
-        buttonStopper,
+        isButtonDisabled,
         amount,
         pokemonNames,
-        pokemonLoaded,
+        pokemonLoadedAmount,
         handleLoadMoreClick,
       }}
     >

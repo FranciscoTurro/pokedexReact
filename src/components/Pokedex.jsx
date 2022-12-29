@@ -4,31 +4,37 @@ import PokemonContext from '../context/PokemonContext';
 
 const Pokedex = () => {
   const {
-    pokemon,
-    loading,
-    shiny,
+    pokemonList,
+    isLoading,
+    isShiny,
     maxNumberOfPokemon,
-    buttonStopper,
+    isButtonDisabled,
     handleLoadMoreClick,
-    pokemonLoaded,
+    pokemonLoadedAmount,
   } = useContext(PokemonContext);
 
-  if (loading) return <div>loading...</div>;
+  if (isLoading) return <div>loading...</div>;
 
   return (
     <div className="main">
       <div className="pokedex">
-        {pokemon.map((pokemon) => {
+        {pokemonList.map((pokemon) => {
           if (pokemon.id <= maxNumberOfPokemon)
             return (
-              <PokemonSmall key={pokemon.id} shiny={shiny} pokemon={pokemon} />
+              <PokemonSmall
+                key={pokemon.id}
+                isShiny={isShiny}
+                pokemon={pokemon}
+              />
             );
         })}
       </div>
       <div className="loadBtnContainer">
         <button
           className="btn"
-          disabled={pokemonLoaded > maxNumberOfPokemon || buttonStopper}
+          disabled={
+            pokemonLoadedAmount > maxNumberOfPokemon || isButtonDisabled
+          }
           onClick={handleLoadMoreClick}
         >
           Load more Pokémon

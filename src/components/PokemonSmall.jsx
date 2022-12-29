@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import uppercase from '../util/uppercase';
 
-const PokemonSmall = ({ pokemon, shiny }) => {
+const PokemonSmall = ({ pokemon, isShiny }) => {
   const {
     name,
     sprites: { front_default, front_shiny },
@@ -13,7 +13,7 @@ const PokemonSmall = ({ pokemon, shiny }) => {
       <div className="pokemon">
         <img
           className="pokeIMG"
-          src={shiny ? front_shiny : front_default}
+          src={isShiny ? front_shiny : front_default}
           alt={name}
         />
         <div>{uppercase(name)}</div>

@@ -4,7 +4,7 @@ import PokemonContext from '../context/PokemonContext';
 import PokeInput from './PokeInput';
 
 const Header = () => {
-  const { toggleShiny, shiny, pokemonNames } = useContext(PokemonContext);
+  const { toggleShiny, isShiny, pokemonNames } = useContext(PokemonContext);
 
   const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ const Header = () => {
         <div className="headerBtnContainer">
           {useLocation().pathname === '/' && (
             <button className="btn" onClick={toggleShiny}>
-              {shiny ? 'Regular sprites' : 'Shiny sprites'}
+              {isShiny ? 'Regular sprites' : 'Shiny sprites'}
             </button>
           )}
         </div>
