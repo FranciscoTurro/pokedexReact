@@ -1,7 +1,7 @@
 import { Outlet, useNavigate, useLocation } from 'react-router';
 import { useContext, useState } from 'react';
 import PokemonContext from '../context/PokemonContext';
-import PokeInput from './PokeInput';
+import AutocompleteInput from './AutocompleteInput';
 
 const Header = () => {
   const { toggleShiny, isShiny, pokemonNames } = useContext(PokemonContext);
@@ -25,7 +25,7 @@ const Header = () => {
         </div>
       </div>
       <div className="suggestion-input">
-        <PokeInput array={pokemonNames} />
+        <AutocompleteInput array={pokemonNames} />
       </div>
       <Outlet />
     </div>

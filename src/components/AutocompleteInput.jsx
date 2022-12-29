@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import uppercase from '../util/uppercase';
 import { useNavigate } from 'react-router';
 
-const PokeInput = ({ array }) => {
+const AutocompleteInput = ({ array }) => {
   const navigate = useNavigate();
 
   const [inputValue, setInputValue] = useState('');
@@ -103,4 +103,4 @@ const PokeInput = ({ array }) => {
   );
 };
 
-export default PokeInput;
+export default AutocompleteInput;
