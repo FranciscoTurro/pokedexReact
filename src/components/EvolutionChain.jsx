@@ -7,6 +7,22 @@ const EvolutionChain = ({ pokemon }) => {
 
   const getEvolutionLine = async (pokemon) => {
     setIsLoading(true);
+
+    const evolutionLine = [];
+
+    const getEvolutions = (currentEvolution) => {
+      evolutionLine.push(currentEvolution.species.name);
+      if (currentEvolution.evolves_to.length === 0) {
+        return;
+      } else if (currentEvolution.evolves_to.length === 1) {
+        getEvolutions(currentEvolution.evolves_to[0]);
+      } else {
+        currentEvolution.evolves_to.forEach((evolution) => {
+          getEvolutions(evolution);
+        });
+      }
+    };
+
     const res = await fetch(pokemon.species.url);
     const species = await res.json();
 
@@ -25,21 +41,6 @@ const EvolutionChain = ({ pokemon }) => {
       `https://pokeapi.co/api/v2/evolution-chain/${evolutionChainID}`
     );
     const evolutionChain = await evolutionChainResponse.json();
-
-    const evolutionLine = [];
-
-    const getEvolutions = (currentEvolution) => {
-      evolutionLine.push(currentEvolution.species.name);
-      if (currentEvolution.evolves_to.length === 0) {
-        return;
-      } else if (currentEvolution.evolves_to.length === 1) {
-        getEvolutions(currentEvolution.evolves_to[0]);
-      } else {
-        currentEvolution.evolves_to.forEach((evolution) => {
-          getEvolutions(evolution);
-        });
-      }
-    };
 
     let currentEvolution = evolutionChain.chain;
     getEvolutions(currentEvolution);

@@ -11,7 +11,8 @@ P4G color palette (?)
 
 IMPORTANT make the PokemonSmall look good on the pokedex
 
-IMPORTANT: READ AND UNDERSTAND EVOLUTIONCHAIN AND AUTOCOMPLETEINPUT FFS
+IMPORTANT: READ AND UNDERSTAND EVOLUTIONCHAIN AND AUTOCOMPLETEINPUT FFS.
+grab pen and paper and understand the recursion in getEvolutions
 
 instead of loading... get a loader maybe if they are easy to implement
 
