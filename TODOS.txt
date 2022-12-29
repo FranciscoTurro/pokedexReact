@@ -18,3 +18,5 @@ IMPORTANT add evolution chain to the bottom of pokemonExtended, too much unused 
 4. Parse the JSON and get the full list of evolutions.
 
 maybe a linter, but check on reddit first
+
+instead of loading... get a loader maybe if they are easy to implement
