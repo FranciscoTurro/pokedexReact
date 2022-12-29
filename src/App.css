@@ -16,7 +16,9 @@ html {
 
 .evolutionChain {
   display: flex;
+  flex-wrap: wrap;
   gap: 3em;
+  padding-bottom: 2em;
 }
 
 .loadBtnContainer {

@@ -11,12 +11,14 @@ P4G color palette (?)
 
 IMPORTANT make the PokemonSmall look good on the pokedex
 
-IMPORTANT add evolution chain to the bottom of pokemonExtended, too much unused space. 
-1. Fetch the pokemon-species: https://pokeapi.co/api/v2/pokemon-species/ivysaur
-2. Look at .evolution_chain -> https://pokeapi.co/api/v2/evolution-chain/1/
-3. Fetch the chain: https://pokeapi.co/api/v2/evolution-chain/1/
-4. Parse the JSON and get the full list of evolutions.
+IMPORTANT: READ AND UNDERSTAND EVOLUTIONCHAIN AND AUTOCOMPLETEINPUT FFS
+
+instead of loading... get a loader maybe if they are easy to implement
 
 maybe a linter, but check on reddit first
 
-instead of loading... get a loader maybe if they are easy to implement
+immediate issues: 
+problems with urshifu evolution line 
+user can sync out the evolution line if he clicks next/previous fast and out of order 
+scrollbars are kind of fucky in pokemon extended (2em padding bottom)
+

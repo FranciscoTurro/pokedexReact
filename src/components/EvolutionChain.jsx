@@ -10,10 +10,17 @@ const EvolutionChain = ({ pokemon }) => {
     const res = await fetch(pokemon.species.url);
     const species = await res.json();
 
+    if (!species.evolution_chain) {
+      setEvolutionLine([pokemon]);
+      setIsLoading(false);
+      return;
+    }
+
     const evolutionChainID =
       species.evolution_chain.url.split('/')[
         species.evolution_chain.url.split('/').length - 2
       ];
+
     const evolutionChainResponse = await fetch(
       `https://pokeapi.co/api/v2/evolution-chain/${evolutionChainID}`
     );
@@ -21,11 +28,21 @@ const EvolutionChain = ({ pokemon }) => {
 
     const evolutionLine = [];
 
-    let currentEvolution = evolutionChain.chain;
-    while (currentEvolution !== null) {
+    const getEvolutions = (currentEvolution) => {
       evolutionLine.push(currentEvolution.species.name);
-      currentEvolution = currentEvolution.evolves_to[0] || null;
-    }
+      if (currentEvolution.evolves_to.length === 0) {
+        return;
+      } else if (currentEvolution.evolves_to.length === 1) {
+        getEvolutions(currentEvolution.evolves_to[0]);
+      } else {
+        currentEvolution.evolves_to.forEach((evolution) => {
+          getEvolutions(evolution);
+        });
+      }
+    };
+
+    let currentEvolution = evolutionChain.chain;
+    getEvolutions(currentEvolution);
 
     Promise.all(
       evolutionLine.map(async (pokemon) => {
@@ -57,6 +74,3 @@ const EvolutionChain = ({ pokemon }) => {
 };
 
 export default EvolutionChain;
-
-//foreach in the array fetch the pokemon and return a variable with all of the PokemonSmall
-// trata de no usar la solucion esta porque no entendes un pomo.
