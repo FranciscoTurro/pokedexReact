@@ -2,15 +2,16 @@ import { useEffect, useState, useRef } from 'react';
 import PokemonContext from './PokemonContext';
 
 const PokemonProvider = ({ children }) => {
+  const amount = 50;
+  const maxNumberOfPokemon = 905;
+
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(true);
   const [buttonStopper, setButtonStopper] = useState(true);
   const [offset, setOffset] = useState(0);
-  const [amount, setAmount] = useState(50);
   const [shiny, setShiny] = useState(false);
   const [pokemonNames, setPokemonNames] = useState([]);
-
-  const maxNumberOfPokemon = 905;
+  const [pokemonLoaded, setPokemonLoaded] = useState(amount);
 
   const getPokemon = async () => {
     setButtonStopper(true);
@@ -52,6 +53,11 @@ const PokemonProvider = ({ children }) => {
     setOffset((offset) => offset + amount);
   };
 
+  const handleLoadMoreClick = () => {
+    setPokemonLoaded((pokemonLoaded) => pokemonLoaded + amount);
+    loadMorePokemon();
+  };
+
   const toggleShiny = () => {
     setShiny(!shiny);
   };
@@ -76,6 +82,8 @@ const PokemonProvider = ({ children }) => {
         buttonStopper,
         amount,
         pokemonNames,
+        pokemonLoaded,
+        handleLoadMoreClick,
       }}
     >
       {children}

@@ -4,24 +4,9 @@ import PokemonContext from '../context/PokemonContext';
 import PokeInput from './PokeInput';
 
 const Header = () => {
-  const {
-    toggleShiny,
-    loadMorePokemon,
-    maxNumberOfPokemon,
-    buttonStopper,
-    amount,
-    shiny,
-    pokemonNames,
-  } = useContext(PokemonContext);
-
-  const [pokemonLoaded, setPokemonLoaded] = useState(amount);
+  const { toggleShiny, shiny, pokemonNames } = useContext(PokemonContext);
 
   const navigate = useNavigate();
-
-  const handleClick = () => {
-    setPokemonLoaded((pokemonLoaded) => pokemonLoaded + amount);
-    loadMorePokemon();
-  };
 
   return (
     <div className="header">
@@ -35,16 +20,6 @@ const Header = () => {
           {useLocation().pathname === '/' && (
             <button className="btn" onClick={toggleShiny}>
               {shiny ? 'Regular sprites' : 'Shiny sprites'}
-            </button>
-          )}
-
-          {useLocation().pathname === '/' && (
-            <button
-              className="btn"
-              disabled={pokemonLoaded > maxNumberOfPokemon || buttonStopper}
-              onClick={handleClick}
-            >
-              Load more Pokémon
             </button>
           )}
         </div>
