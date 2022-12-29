@@ -2,12 +2,12 @@ import { useEffect, useState, useRef } from 'react';
 import PokemonContext from './PokemonContext';
 
 const PokemonProvider = ({ children }) => {
-  const amount = 50; //the amount of pokemon i will be loading
+  const pokemonLoadLimit = 50;
   const maxNumberOfPokemon = 905;
-
   const [pokemonList, setPokemonList] = useState([]);
   const [pokemonNames, setPokemonNames] = useState([]);
-  const [pokemonLoadedAmount, setPokemonLoadedAmount] = useState(amount);
+  const [pokemonLoadedAmount, setPokemonLoadedAmount] =
+    useState(pokemonLoadLimit);
   const [isLoading, setIsLoading] = useState(true);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [isShiny, setIsShiny] = useState(false);
@@ -16,7 +16,7 @@ const PokemonProvider = ({ children }) => {
   const getPokemon = async () => {
     setIsButtonDisabled(true);
 
-    let url = `https://pokeapi.co/api/v2/pokemon?limit=${amount}&offset=${offset}`;
+    let url = `https://pokeapi.co/api/v2/pokemon?limit=${pokemonLoadLimit}&offset=${offset}`;
 
     const res = await fetch(url);
 
@@ -50,11 +50,11 @@ const PokemonProvider = ({ children }) => {
   };
 
   const loadMorePokemon = () => {
-    setOffset((offset) => offset + amount);
+    setOffset((offset) => offset + pokemonLoadLimit);
   };
 
   const handleLoadMoreClick = () => {
-    setPokemonLoadedAmount((pokemonLoaded) => pokemonLoaded + amount);
+    setPokemonLoadedAmount((pokemonLoaded) => pokemonLoaded + pokemonLoadLimit);
     loadMorePokemon();
   };
 
@@ -80,7 +80,7 @@ const PokemonProvider = ({ children }) => {
         isLoading,
         loadMorePokemon,
         isButtonDisabled,
-        amount,
+        amount: pokemonLoadLimit,
         pokemonNames,
         pokemonLoadedAmount,
         handleLoadMoreClick,
