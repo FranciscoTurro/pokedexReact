@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router';
 import { useContext } from 'react';
 import PokemonContext from '../context/PokemonContext';
 import InfoDiv from './InfoDiv';
+import EvolutionChain from './EvolutionChain';
 
 const PokemonExtended = ({ pokemon }) => {
   const navigate = useNavigate();
@@ -85,6 +86,7 @@ const PokemonExtended = ({ pokemon }) => {
           <div className="typesContainer">{typesList}</div>
         </div>
       </div>
+      <EvolutionChain pokemon={pokemon} />
     </div>
   );
 };
