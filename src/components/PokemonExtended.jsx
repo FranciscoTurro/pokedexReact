@@ -1,15 +1,16 @@
 import uppercase from '../util/uppercase';
 import normalizeNum from '../util/normalizeNum';
-import { useNavigate } from 'react-router';
-import { useContext } from 'react';
-import PokemonContext from '../context/PokemonContext';
-import InfoDiv from './InfoDiv';
 import EvolutionChain from './EvolutionChain';
 
 const PokemonExtended = ({ pokemon }) => {
-  const navigate = useNavigate();
-
-  const { maxNumberOfPokemon } = useContext(PokemonContext);
+  const InfoDiv = ({ title, info }) => {
+    return (
+      <div className="infoDiv">
+        <div className="infoTitle">{title}</div>
+        <div className="infoInfo">{info}</div>
+      </div>
+    );
+  };
 
   const {
     name,
