@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import PokemonSmall from './PokemonSmall';
+import getNumberFromString from '../util/getNumberFromString';
 
 const EvolutionChain = ({ pokemon }) => {
   const [evolutionLine, setEvolutionLine] = useState([]);
@@ -11,7 +12,8 @@ const EvolutionChain = ({ pokemon }) => {
     const evolutionLine = [];
 
     const getEvolutions = (currentEvolution) => {
-      evolutionLine.push(currentEvolution.species.name);
+      const pokemonID = getNumberFromString(currentEvolution.species.url);
+      evolutionLine.push(pokemonID);
       if (currentEvolution.evolves_to.length === 0) {
         return;
       } else if (currentEvolution.evolves_to.length === 1) {

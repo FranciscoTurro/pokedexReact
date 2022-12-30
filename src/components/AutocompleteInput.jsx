@@ -78,7 +78,7 @@ const AutocompleteInput = ({ array }) => {
   };
 
   return (
-    <div>
+    <div className="suggestion-input">
       <input
         type="text"
         value={inputValue}

@@ -23,8 +23,6 @@ being used (infodiv for sure). very specific components can use very specific pr
 props. is autocompleteinput generic or specific?
 
 immediate issues:
-problems with urshifu evolution line
-scrollbars are kind of fucky in pokemon extended (2em padding bottom)
 see if there's a way to make the evolution line be less confusing. you know, arrows and shit
 
 use ctrl+e for go to file

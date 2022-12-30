@@ -3,10 +3,6 @@
   src: url('./assets/fonts/Flexo-Medium.otf') format('opentype');
 }
 
-html {
-  overflow-y: scroll;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -132,7 +128,6 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 2em;
-  height: 100vh;
 }
 
 .infoContainer {
@@ -171,11 +166,11 @@ html {
 }
 
 .suggestion-input input {
-  width: 300px;
-  height: 30px;
+  width: 22em;
+  height: 2.2em;
   border: 1px solid #ccc;
   border-radius: 10px;
-  padding: 0 10px;
+  padding: 1em;
   color: black;
 }
 

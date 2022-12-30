@@ -24,9 +24,9 @@ const Header = () => {
           )}
         </div>
       </div>
-      <div className="suggestion-input">
-        <AutocompleteInput array={pokemonNames} />
-      </div>
+
+      <AutocompleteInput array={pokemonNames} />
+
       <Outlet />
     </div>
   );
