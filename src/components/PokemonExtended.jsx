@@ -55,25 +55,6 @@ const PokemonExtended = ({ pokemon }) => {
 
   return (
     <div className="pokemonExtended">
-      <div className="nameButtonContainer">
-        <button
-          className="btn"
-          disabled={id - 1 === 0}
-          onClick={() => navigate(`/pokemon/${id - 1}`)}
-        >
-          Previous Pokémon
-        </button>
-
-        <div className="pokemonName">{`${uppercase(name)} N.º ${id}`}</div>
-
-        <button
-          className="btn"
-          disabled={id + 1 > maxNumberOfPokemon}
-          onClick={() => navigate(`/pokemon/${id + 1}`)}
-        >
-          Next Pokémon
-        </button>
-      </div>
       <div className="picInfoContainer">
         <img src={front_default} alt={`Image of Pokemon ${name}`} />
         <div className="infoContainer">

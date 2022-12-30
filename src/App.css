@@ -84,6 +84,7 @@ html {
   justify-content: space-between;
   padding-left: 2em;
   padding-right: 2em;
+  padding-top: 4.5em;
 }
 
 .btn {
@@ -130,7 +131,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4em;
+  gap: 2em;
   height: 100vh;
 }
 

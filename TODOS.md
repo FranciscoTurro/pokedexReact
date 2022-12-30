@@ -18,9 +18,12 @@ instead of loading... get a loader maybe if they are easy to implement
 
 maybe a linter, but check on reddit first
 
-immediate issues: 
-problems with urshifu evolution line 
-user can sync out the evolution line if he clicks next/previous fast and out of order 
+if a component is used in only one place it doesnt need its own separate file. just declare it inside where its
+being used (infodiv for sure). very specific components can use very specific props, generic components use generic
+props. is autocompleteinput generic or specific?
+
+immediate issues:
+problems with urshifu evolution line
 scrollbars are kind of fucky in pokemon extended (2em padding bottom)
 see if there's a way to make the evolution line be less confusing. you know, arrows and shit
 
