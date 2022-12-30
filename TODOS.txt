@@ -22,4 +22,7 @@ immediate issues:
 problems with urshifu evolution line 
 user can sync out the evolution line if he clicks next/previous fast and out of order 
 scrollbars are kind of fucky in pokemon extended (2em padding bottom)
+see if there's a way to make the evolution line be less confusing. you know, arrows and shit
 
+use ctrl+e for go to file
+use the source control tab in vscode for easy commits to github

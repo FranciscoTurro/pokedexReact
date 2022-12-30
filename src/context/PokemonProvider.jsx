@@ -80,7 +80,7 @@ const PokemonProvider = ({ children }) => {
         isLoading,
         loadMorePokemon,
         isButtonDisabled,
-        amount: pokemonLoadLimit,
+        pokemonLoadLimit,
         pokemonNames,
         pokemonLoadedAmount,
         handleLoadMoreClick,
