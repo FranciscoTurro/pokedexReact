@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import PokemonSmall from './PokemonSmall';
 import getNumberFromString from '../util/getNumberFromString';
+import uppercase from '../util/uppercase';
 
 const EvolutionChain = ({ pokemon }) => {
   const [evolutionLine, setEvolutionLine] = useState([]);
@@ -66,12 +67,15 @@ const EvolutionChain = ({ pokemon }) => {
   if (isLoading) return <div>loading...</div>;
 
   return (
-    <div className="evolutionChain">
-      {evolutionLine.map((pokemon) => {
-        return (
-          <PokemonSmall key={pokemon.id} isShiny={false} pokemon={pokemon} />
-        );
-      })}
+    <div style={{ textAlign: 'center' }}>
+      <p>Evolution chain of {uppercase(pokemon.name)}</p>
+      <div className="evolutionChain">
+        {evolutionLine.map((pokemon) => {
+          return (
+            <PokemonSmall key={pokemon.id} isShiny={false} pokemon={pokemon} />
+          );
+        })}
+      </div>
     </div>
   );
 };
