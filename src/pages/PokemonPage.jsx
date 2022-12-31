@@ -20,9 +20,18 @@ const PokemonPage = () => {
     const pokeRes = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const pokeData = await pokeRes.json();
 
-    const flavorTextRes = await fetch(pokeData.species.url);
-    const flavorTextData = await flavorTextRes.json();
-    const flavorText = flavorTextData.flavor_text_entries[0].flavor_text;
+    const speciesRes = await fetch(pokeData.species.url);
+    const speciesData = await speciesRes.json();
+
+    let flavorTextEntry = speciesData.flavor_text_entries.find(
+      (entry) => entry.language.name === 'en' && entry.version.name === 'x'
+    );
+    if (flavorTextEntry === undefined)
+      flavorTextEntry = speciesData.flavor_text_entries.find(
+        (entry) => entry.language.name === 'en'
+      );
+
+    const flavorText = flavorTextEntry.flavor_text;
     pokeData.flavorText = flavorText;
 
     setIsLoading(false);
