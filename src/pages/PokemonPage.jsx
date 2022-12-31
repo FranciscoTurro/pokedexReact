@@ -68,7 +68,7 @@ const PokemonPage = () => {
           Next Pokémon
         </button>
       </div>
-      <PokemonExtended pokemon={pokemon} />;
+      <PokemonExtended pokemon={pokemon} />
     </>
   );
 };

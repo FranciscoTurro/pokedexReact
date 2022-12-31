@@ -109,7 +109,8 @@
 }
 
 .flavorText {
-  width: 27em;
+  font-size: 110%;
+  width: 24.3em;
 }
 
 .typesContainer {
