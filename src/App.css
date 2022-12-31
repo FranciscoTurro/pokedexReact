@@ -108,7 +108,21 @@
   padding: 1em;
 }
 
+.flavorText {
+  width: 27em;
+}
+
 .typesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.typesContainer p {
+  font-size: 150%;
+}
+
+.types {
   display: flex;
   gap: 10px;
 }
@@ -116,6 +130,11 @@
 .picInfoContainer {
   display: flex;
   gap: 2em;
+}
+
+.picInfoContainer img {
+  width: 27em;
+  height: 27em;
 }
 
 .pokemonName {
@@ -133,8 +152,7 @@
 .infoContainer {
   display: flex;
   flex-direction: column;
-  gap: 2em;
-  align-items: center;
+  gap: 1em;
 }
 
 .extendedInfo {

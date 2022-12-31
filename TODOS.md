@@ -18,6 +18,8 @@ instead of loading... get a loader maybe if they are easy to implement
 very specific components can use very specific props, generic components use generic
 props. is autocompleteinput generic or specific?
 
+maybe add another page, just to try react router a bit more
+
 IMPORTANT make the PokemonSmall look good on the pokedex
 
 IMPORTANT see if there's a way to make the evolution line be less confusing. you know, arrows and shit

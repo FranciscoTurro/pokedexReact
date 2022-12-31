@@ -17,11 +17,16 @@ const PokemonPage = () => {
 
   const getOnePokemon = async (id) => {
     setDisableButton(true);
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    const data = await res.json();
+    const pokeRes = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const pokeData = await pokeRes.json();
+
+    const flavorTextRes = await fetch(pokeData.species.url);
+    const flavorTextData = await flavorTextRes.json();
+    const flavorText = flavorTextData.flavor_text_entries[0].flavor_text;
+    pokeData.flavorText = flavorText;
 
     setIsLoading(false);
-    setPokemon(data);
+    setPokemon(pokeData);
     setDisableButton(false);
   };
 

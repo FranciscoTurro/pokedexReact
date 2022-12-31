@@ -14,7 +14,6 @@ const PokemonExtended = ({ pokemon }) => {
 
   const {
     name,
-    id,
     height,
     weight,
     types,
@@ -59,13 +58,17 @@ const PokemonExtended = ({ pokemon }) => {
       <div className="picInfoContainer">
         <img src={front_default} alt={`Image of Pokemon ${name}`} />
         <div className="infoContainer">
+          <div className="flavorText">{pokemon.flavorText}</div>
           <div className="extendedInfo">
             <InfoDiv title={'Height'} info={normalizeNum(height) + ' m'} />
             <InfoDiv title={'Main ability'} info={uppercase(mainAbility)} />
             <InfoDiv title={'Weight'} info={normalizeNum(weight) + ' kg'} />
             <InfoDiv title={'Main stats'} info={statsList} />
           </div>
-          <div className="typesContainer">{typesList}</div>
+          <div className="typesContainer">
+            <p>{typesList.length > 1 ? 'Types' : 'Type'}</p>
+            <div className="types">{typesList}</div>
+          </div>
         </div>
       </div>
       <EvolutionChain pokemon={pokemon} />
