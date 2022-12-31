@@ -1,28 +1,24 @@
-there is a sidebar that allows pokemon to be filtered by type (OPTIONAL)
+OPTIONAL TODOS, FOR WHEN AFTER THE APP IS "FINISHED":
 
-add a button which opens a modal (?) and shows a description
-of the main ability. has to fetch it (OPTIONAL)
+- allow pokemon to be filtered by type
+- add a button next to the main ability that shows a description of it. should be a small modal that only takes the space of that infoDiv
+- make the shiny sprites button a toggle
+- change pokemonProvider (or any component that uses more than 3 state variables) and change it into a reducer
+- make all util functions be in one file
 
-make the shiny sprites button a toggle (OPTIONAL)
+LUXURY TODOS, NOT ENTIRELY NECESSARY, BUT WOULD BE GOOD TO ADD THEM BEFORE THE APP IS "FINISHED" (MAYBES):
 
-OPTIONAL, FOR ENDGAME (lol). pokemon provider uses way too much state, change it to a reducer
+- add a linter
+- instead of loading... get a loader
+- do a revamp of the props each component takes. very specific components can use very specific props, generic components use generic props
+- add another page, just to try react router a bit more
+- possibly make the EvolutionChain be less ambigous
 
-OPTIONAL. all util functions are in one file
+TODOS NECESSARY FOR THE APP TO BE "FINISHED":
 
-P4G color palette (?)
-
-maybe a linter, but check on reddit first
-
-instead of loading... get a loader maybe if they are easy to implement
-
-very specific components can use very specific props, generic components use generic
-props. is autocompleteinput generic or specific?
-
-maybe add another page, just to try react router a bit more
-
-IMPORTANT make the PokemonSmall look good on the pokedex
-
-IMPORTANT see if there's a way to make the evolution line be less confusing. you know, arrows and shit
+- make the PokemonSmall look good on the Pokedex
+- choose a color palette and apply it (hover color for the input, disabled buttons, etc)
+  possible color palettes: persona 4, synthwave, pokemon
 
 use ctrl+e for go to file
 use the source control tab in vscode for easy commits to github
