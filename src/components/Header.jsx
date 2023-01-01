@@ -1,5 +1,5 @@
 import { Outlet, useNavigate, useLocation } from 'react-router';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import PokemonContext from '../context/PokemonContext';
 import AutocompleteInput from './AutocompleteInput';
 

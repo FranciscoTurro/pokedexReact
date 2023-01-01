@@ -67,8 +67,8 @@ const EvolutionChain = ({ pokemon }) => {
   if (isLoading) return <div>loading...</div>;
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <p>Evolution chain of {uppercase(pokemon.name)}</p>
+    <div className="evolutionChainContainer">
+      <p>{uppercase(pokemon.name)}'s evolution family</p>
       <div className="evolutionChain">
         {evolutionLine.map((pokemon) => {
           return (

@@ -34,7 +34,7 @@ const PokemonExtended = ({ pokemon }) => {
   }
 
   const typesList = types.map((p) => (
-    <div className={`type-${p.type.name}`} key={p.type.name}>
+    <div className={`type ${p.type.name}`} key={p.type.name}>
       {uppercase(p.type.name)}
     </div>
   ));
