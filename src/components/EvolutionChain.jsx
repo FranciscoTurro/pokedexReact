@@ -1,7 +1,27 @@
 import { useState, useEffect } from 'react';
-import PokemonSmall from './PokemonSmall';
+import { Link } from 'react-router-dom';
 import getNumberFromString from '../util/getNumberFromString';
 import uppercase from '../util/uppercase';
+
+const PokemonSmallSimple = ({ pokemon }) => {
+  const {
+    name,
+    sprites: { front_default },
+    id,
+  } = pokemon;
+
+  return (
+    <Link
+      to={`/pokemon/${id}`}
+      style={{ cursor: 'pointer', textDecoration: 'none', textAlign: 'center' }}
+    >
+      <div className="pokemon">
+        <img className="pokeIMG" src={front_default} alt={name} />
+        <div>{uppercase(name)}</div>
+      </div>
+    </Link>
+  );
+};
 
 const EvolutionChain = ({ pokemon }) => {
   const [evolutionLine, setEvolutionLine] = useState([]);
@@ -71,9 +91,7 @@ const EvolutionChain = ({ pokemon }) => {
       <p>{uppercase(pokemon.name)}'s evolution family</p>
       <div className="evolutionChain">
         {evolutionLine.map((pokemon) => {
-          return (
-            <PokemonSmall key={pokemon.id} isShiny={false} pokemon={pokemon} />
-          );
+          return <PokemonSmallSimple key={pokemon.id} pokemon={pokemon} />;
         })}
       </div>
     </div>

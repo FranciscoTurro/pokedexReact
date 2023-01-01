@@ -54,11 +54,10 @@
 }
 
 .pokedex {
-  padding-top: 5em;
-  padding-bottom: 1em;
+  padding: 5em 1em 1em 1em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
-  grid-gap: 2.2em;
+  grid-gap: 2em;
 }
 
 .pokemon {
@@ -76,10 +75,15 @@
 
 .card-pokemon {
   border: 2px solid black;
+  border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
-  height: 15em;
   text-align: center;
+  height: 15em;
+}
+
+.card-pokemon:hover {
+  background-color: red;
 }
 
 .nameButtonContainer {
@@ -255,13 +259,18 @@
 }
 
 .suggestion-input li:hover {
-  background-color: #eee;
+  background-color: red;
 }
 
 /* POKEMON TYPES ------------------------------------------------------------------------------------ */
 .water {
   background: linear-gradient(180deg, #4592c4 50%, #4592c4 50%);
   color: #fff;
+}
+
+.grass {
+  background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  color: #212121;
 }
 
 .poison {
