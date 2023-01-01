@@ -1,6 +1,5 @@
 # OPTIONAL TODOS, FOR WHEN AFTER THE APP IS "FINISHED":
 
-- allow pokemon to be filtered by type
 - add a button next to the main ability that shows a description of it. should be a small modal that only takes the space of that infoDiv
 - make the shiny sprites button a toggle
 - change pokemonProvider (or any component that uses more than 3 state variables) and change it into a reducer
@@ -12,13 +11,14 @@
 - instead of loading... get a loader
 - do a revamp of the props each component takes. very specific components can use very specific props, generic components use generic props
 - add another page, just to try react router a bit more
-- possibly make the EvolutionChain be less ambigous
+- very small "bugs" with the autocompletion input, it doesnt follow the user when it uses the arrow keys, and a user can hover 2 things at once (one with mouse and one with keyboard). good practice because it was AI generated, so it would be good to go through it and try to figure it out
 
 # TODOS NECESSARY FOR THE APP TO BE "FINISHED":
 
 - choose a color palette and apply it (hover colors, disabled buttons, components etc)
   possible color palettes: persona 4, synthwave, pokemon
-- on the pokemon page, a user can click on a type and it will take him to a page dedicated to that type which displays all of the pokemon that match the type. dont make a component/page for each type, only 1 that works for all. it should be okay to fetch an array with ALL of the pokemon because im not displaying anything, just fetching it. fetch ALL of them and then save them on an array, this is an Effect only on mount. from this array just filter them based on type
+- user can filter out pokemon by type. just filter out pokedex. dropdown menu from header i think
+- make the evolution chain less ambiguous. if a pokemon has more than one evolves_to (or something like that, check the api call and use chatgpt AS A LAST RESOURCE) you can put them both in the same div or something like that, whatever, but make them show on the same line, different from the others
 
 use ctrl+e for go to file
 use the source control tab in vscode for easy commits to github
