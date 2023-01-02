@@ -4,12 +4,14 @@
 }
 
 :root {
-  --dark-gray: #333333;
+  --dark-gray: #212121;
   --gray: #535353;
   --light-gray: #f5f5f5;
   --yellow: #ffd800;
   --orange: #f47820;
   --blue: #30a7d7;
+  --background-gradient-1: #ffd800;
+  --background-gradient-2: #ffbb00;
 }
 
 * {
@@ -17,6 +19,14 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Flexo;
+}
+
+body {
+  background-image: linear-gradient(
+    to left,
+    var(--background-gradient-1) 50%,
+    var(--background-gradient-2) 100%
+  );
 }
 
 .header {
@@ -60,7 +70,11 @@
 }
 
 .main {
-  background-image: linear-gradient(to left, #ffd800 50%, #ffbb00 100%);
+  background-image: linear-gradient(
+    to left,
+    var(--background-gradient-1) 50%,
+    var(--background-gradient-2) 100%
+  );
 }
 
 .pokedex {
@@ -71,16 +85,17 @@
 }
 
 .card-pokemon {
-  border: 2px solid black;
-  border-radius: 10px;
+  border: 2px solid var(--dark-gray);
+  border-radius: 25px;
   cursor: pointer;
   text-decoration: none;
   text-align: center;
   height: 15em;
-  background-color: white;
+  background-color: var(--dark-gray);
 }
+
 .card-pokemon:hover {
-  background-color: var(--orange);
+  background-color: var(--gray);
 }
 
 .card-pokemon img {
@@ -88,7 +103,7 @@
 }
 
 .card-pokemon div {
-  color: black;
+  color: white;
   font-size: 1.5rem;
 }
 
@@ -106,7 +121,14 @@
 .loadBtnContainer button:hover {
   color: black;
   background-color: var(--yellow);
-  border: 2px solid black;
+}
+
+.pokemonPage {
+  background-image: linear-gradient(
+    to left,
+    var(--background-gradient-1) 50%,
+    var(--background-gradient-2) 100%
+  );
 }
 
 .nameButtonContainer {
@@ -118,12 +140,27 @@
   padding-top: 4.5em;
 }
 
+.nameButtonContainer button {
+  color: white;
+  background-color: var(--orange);
+}
+
+.nameButtonContainer button:hover {
+  color: black;
+  background-color: var(--yellow);
+}
+
+.pokemonName {
+  font-size: 160%;
+}
+
 .pokemonExtended {
   padding-top: 3em;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4em;
+  height: calc(100vh - 7em);
 }
 
 .picInfoContainer {
@@ -150,10 +187,11 @@
 .extendedInfo {
   width: 27em;
   height: 14em;
-  background-color: #30a7d7;
-  border-radius: 10px;
+  background-color: var(--dark-gray);
+  border-radius: 5px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  color: white;
 }
 
 .infoDiv {
@@ -165,7 +203,7 @@
 }
 
 .infoTitle {
-  color: white;
+  color: var(--yellow);
 }
 
 .typesContainer {
@@ -197,6 +235,10 @@
   padding-bottom: 2em;
 }
 
+.pokeIMG {
+  width: 8em;
+}
+
 .btn {
   cursor: pointer;
   border: none;
@@ -204,11 +246,17 @@
   width: 13rem;
   height: 2.5rem;
   font-size: 1em;
+  border: 2px solid var(--dark-gray);
 }
 
 .btn:disabled {
-  background-color: red;
-  color: red;
+  background-color: var(--dark-gray);
+  color: var(--dark-gray);
+}
+
+.btn:disabled:hover {
+  background-color: var(--dark-gray);
+  color: var(--dark-gray);
 }
 
 .badge {
@@ -230,6 +278,7 @@
   border-radius: 5px;
   width: 10em;
   height: 2em;
+  border: 2px solid var(--dark-gray);
 }
 
 /* PokeInput ------------------------------------------------------------------------------------*/
@@ -271,11 +320,11 @@
 }
 
 .suggestion-input li.selected {
-  background-color: red;
+  background-color: var(--yellow);
 }
 
 .suggestion-input li:hover {
-  background-color: red;
+  background-color: var(--yellow);
 }
 
 /* POKEMON TYPES ------------------------------------------------------------------------------------ */

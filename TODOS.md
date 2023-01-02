@@ -15,8 +15,6 @@
 
 # TODOS NECESSARY FOR THE APP TO BE "FINISHED":
 
-- choose a color palette and apply it (hover colors, disabled buttons, components etc)
-  possible color palettes: persona 4, synthwave, pokemon
 - user can filter out pokemon by type. just filter out pokedex. dropdown menu from header i think
 - evolution chain only shows what each pokemon can DIRECTLY evolve into
 

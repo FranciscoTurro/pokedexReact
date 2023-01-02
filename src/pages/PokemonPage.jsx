@@ -46,7 +46,7 @@ const PokemonPage = () => {
   if (isLoading) return <div>loading....</div>;
 
   return (
-    <>
+    <div className="pokemonPage">
       <div className="nameButtonContainer">
         <button
           className="btn"
@@ -69,7 +69,7 @@ const PokemonPage = () => {
         </button>
       </div>
       <PokemonExtended pokemon={pokemon} />
-    </>
+    </div>
   );
 };
 
