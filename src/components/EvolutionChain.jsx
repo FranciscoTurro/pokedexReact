@@ -55,14 +55,7 @@ const EvolutionChain = ({ pokemon }) => {
       return;
     }
 
-    const evolutionChainID =
-      species.evolution_chain.url.split('/')[
-        species.evolution_chain.url.split('/').length - 2
-      ];
-
-    const evolutionChainResponse = await fetch(
-      `https://pokeapi.co/api/v2/evolution-chain/${evolutionChainID}`
-    );
+    const evolutionChainResponse = await fetch(species.evolution_chain.url);
     const evolutionChain = await evolutionChainResponse.json();
 
     let currentEvolution = evolutionChain.chain;
@@ -88,7 +81,7 @@ const EvolutionChain = ({ pokemon }) => {
 
   return (
     <div className="evolutionChainContainer">
-      <p>{uppercase(pokemon.name)}'s evolution family</p>
+      <p>Evolutions</p>
       <div className="evolutionChain">
         {evolutionLine.map((pokemon) => {
           return <PokemonSmallSimple key={pokemon.id} pokemon={pokemon} />;

@@ -18,7 +18,7 @@
 - choose a color palette and apply it (hover colors, disabled buttons, components etc)
   possible color palettes: persona 4, synthwave, pokemon
 - user can filter out pokemon by type. just filter out pokedex. dropdown menu from header i think
-- make the evolution chain less ambiguous. if a pokemon has more than one evolves_to (or something like that, check the api call and use chatgpt AS A LAST RESOURCE) you can put them both in the same div or something like that, whatever, but make them show on the same line, different from the others
+- evolution chain only shows what each pokemon can DIRECTLY evolve into
 
 use ctrl+e for go to file
 use the source control tab in vscode for easy commits to github
