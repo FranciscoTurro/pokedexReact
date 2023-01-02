@@ -35,11 +35,7 @@ const EvolutionChain = ({ pokemon }) => {
     const getEvolutions = (currentEvolution) => {
       const pokemonID = getNumberFromString(currentEvolution.species.url);
       evolutionLine.push(pokemonID);
-      if (currentEvolution.evolves_to.length === 0) {
-        return;
-      } else if (currentEvolution.evolves_to.length === 1) {
-        getEvolutions(currentEvolution.evolves_to[0]);
-      } else {
+      if (currentEvolution.evolves_to.length !== 0) {
         currentEvolution.evolves_to.forEach((evolution) => {
           getEvolutions(evolution);
         });
