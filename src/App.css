@@ -77,7 +77,10 @@
   text-decoration: none;
   text-align: center;
   height: 15em;
-  background-color: #f5f5f5;
+  background-color: white;
+}
+.card-pokemon:hover {
+  background-color: var(--orange);
 }
 
 .card-pokemon img {
@@ -87,10 +90,6 @@
 .card-pokemon div {
   color: black;
   font-size: 1.5rem;
-}
-
-.card-pokemon:hover {
-  background-color: #535353;
 }
 
 .loadBtnContainer {
@@ -107,6 +106,7 @@
 .loadBtnContainer button:hover {
   color: black;
   background-color: var(--yellow);
+  border: 2px solid black;
 }
 
 .nameButtonContainer {
@@ -201,8 +201,9 @@
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  width: 16em;
-  height: 3em;
+  width: 13rem;
+  height: 2.5rem;
+  font-size: 1em;
 }
 
 .btn:disabled {
