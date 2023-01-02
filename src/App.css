@@ -10,19 +10,6 @@
   font-family: Flexo;
 }
 
-.evolutionChain {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3em;
-  padding-bottom: 2em;
-}
-
-.loadBtnContainer {
-  display: flex;
-  justify-content: center;
-  padding: 1em;
-}
-
 .header {
   height: 4em;
   display: flex;
@@ -34,6 +21,10 @@
   color: white;
   position: fixed;
   width: 100%;
+}
+
+.header .btn {
+  padding: 1em;
 }
 
 .headerBtnLogoContainer {
@@ -60,19 +51,6 @@
   grid-gap: 2em;
 }
 
-.pokemon {
-  pointer-events: none;
-}
-
-.pokemon div {
-  color: black;
-  font-size: 1.5rem;
-}
-
-.pokeIMG {
-  width: 8em;
-}
-
 .card-pokemon {
   border: 2px solid black;
   border-radius: 10px;
@@ -82,8 +60,23 @@
   height: 15em;
 }
 
+.card-pokemon img {
+  width: 8em;
+}
+
+.card-pokemon div {
+  color: black;
+  font-size: 1.5rem;
+}
+
 .card-pokemon:hover {
   background-color: red;
+}
+
+.loadBtnContainer {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
 }
 
 .nameButtonContainer {
@@ -95,49 +88,12 @@
   padding-top: 4.5em;
 }
 
-.btn {
-  cursor: pointer;
-  width: 10em;
-  height: 3em;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  color: white;
-}
-
-.btn:hover {
-  background-color: grey;
-}
-
-.btn:disabled {
-  background-color: red;
-  color: red;
-}
-
-.header .btn {
-  padding: 1em;
-}
-
-.flavorText {
-  font-size: 110%;
-  width: 24.3em;
-}
-
-.typesContainer {
+.pokemonExtended {
+  padding-top: 3em;
   display: flex;
   flex-direction: column;
-  gap: 1em;
-}
-
-.typesContainer p {
-  font-size: 150%;
-}
-
-.types {
-  display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 4em;
 }
 
 .picInfoContainer {
@@ -150,22 +106,15 @@
   height: 27em;
 }
 
-.pokemonName {
-  font-size: 160%;
-}
-
-.pokemonExtended {
-  padding-top: 3em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4em;
-}
-
 .infoContainer {
   display: flex;
   flex-direction: column;
   gap: 1em;
+}
+
+.flavorText {
+  font-size: 110%;
+  width: 24.3em;
 }
 
 .extendedInfo {
@@ -189,11 +138,54 @@
   color: white;
 }
 
+.typesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.types {
+  display: flex;
+  gap: 10px;
+}
+
+.typesContainer p {
+  font-size: 150%;
+}
+
 .evolutionChainContainer {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.evolutionChain {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+  padding-bottom: 2em;
+}
+
+.btn {
+  cursor: pointer;
+  width: 10em;
+  height: 3em;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+.btn:hover {
+  background-color: grey;
+}
+
+.btn:disabled {
+  background-color: red;
+  color: red;
 }
 
 .badge {

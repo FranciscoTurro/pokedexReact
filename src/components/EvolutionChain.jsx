@@ -15,7 +15,7 @@ const PokemonSmallSimple = ({ pokemon }) => {
       to={`/pokemon/${id}`}
       style={{ cursor: 'pointer', textDecoration: 'none', textAlign: 'center' }}
     >
-      <div className="pokemon">
+      <div className="pokemon" style={{ color: 'black', fontSize: '110%' }}>
         <img className="pokeIMG" src={front_default} alt={name} />
         <div>{uppercase(name)}</div>
       </div>

@@ -17,15 +17,9 @@ const PokemonSmall = ({ pokemon, isShiny }) => {
 
   return (
     <Link to={`/pokemon/${id}`} className="card-pokemon">
-      <div className="pokemon">
-        <img
-          className="pokeIMG"
-          src={isShiny ? front_shiny : front_default}
-          alt={name}
-        />
-        <div>{uppercase(name)}</div>
-        <div>{typesList}</div>
-      </div>
+      <img src={isShiny ? front_shiny : front_default} alt={name} />
+      <div>{uppercase(name)}</div>
+      <div>{typesList}</div>
     </Link>
   );
 };
