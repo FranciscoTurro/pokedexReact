@@ -3,6 +3,7 @@ import { useContext, useState, useRef, useEffect } from 'react';
 import PokemonContext from '../context/PokemonContext';
 import AutocompleteInput from './AutocompleteInput';
 import uppercase from '../util/uppercase';
+import pokeball from '../assets/img/pokeball.png';
 
 const Header = () => {
   const {
@@ -39,11 +40,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="headerBtnLogoContainer">
-        <img
-          src="../src/assets/img/pokeball.png"
-          alt="pokedex"
-          onClick={() => navigate('/')}
-        />
+        <img src={pokeball} alt="pokedex" onClick={() => navigate('/')} />
         <div className="headerBtnContainer">
           {useLocation().pathname === '/' && (
             <button className="btn" onClick={toggleShiny}>
