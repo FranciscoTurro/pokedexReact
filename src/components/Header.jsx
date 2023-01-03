@@ -6,14 +6,8 @@ import uppercase from '../util/uppercase';
 import pokeball from '../assets/img/pokeball.png';
 
 const Header = () => {
-  const {
-    toggleShiny,
-    isShiny,
-    pokemonNames,
-    selectType,
-    types,
-    selectedTypes,
-  } = useContext(PokemonContext);
+  const { toggleShiny, isShiny, pokemonNames, selectType, selectedTypes } =
+    useContext(PokemonContext);
 
   const navigate = useNavigate();
 

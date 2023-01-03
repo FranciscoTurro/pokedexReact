@@ -6,7 +6,6 @@ const PokemonSmall = ({ pokemon, isShiny }) => {
     name,
     sprites: { front_default, front_shiny },
     id,
-    types,
   } = pokemon;
 
   const typesList = types.map((p) => (

@@ -2,27 +2,6 @@ import { useEffect, useState, useRef } from 'react';
 import PokemonContext from './PokemonContext';
 
 const PokemonProvider = ({ children }) => {
-  const types = [
-    'normal',
-    'fighting',
-    'flying',
-    'poison',
-    'ground',
-    'rock',
-    'bug',
-    'ghost',
-    'steel',
-    'fire',
-    'water',
-    'grass',
-    'electric',
-    'psychic',
-    'ice',
-    'dragon',
-    'dark',
-    'fairy',
-  ];
-
   const pokemonLoadLimit = 50;
   const maxNumberOfPokemon = 905;
 
@@ -112,7 +91,6 @@ const PokemonProvider = ({ children }) => {
         pokemonLoadedAmount,
         handleLoadMoreClick,
         selectType,
-        types,
         selectedTypes,
       }}
     >
