@@ -2,8 +2,31 @@ import { useEffect, useState, useRef } from 'react';
 import PokemonContext from './PokemonContext';
 
 const PokemonProvider = ({ children }) => {
+  const types = [
+    'normal',
+    'fighting',
+    'flying',
+    'poison',
+    'ground',
+    'rock',
+    'bug',
+    'ghost',
+    'steel',
+    'fire',
+    'water',
+    'grass',
+    'electric',
+    'psychic',
+    'ice',
+    'dragon',
+    'dark',
+    'fairy',
+  ];
+
   const pokemonLoadLimit = 50;
   const maxNumberOfPokemon = 905;
+
+  const [offset, setOffset] = useState(0);
   const [pokemonList, setPokemonList] = useState([]);
   const [pokemonNames, setPokemonNames] = useState([]);
   const [pokemonLoadedAmount, setPokemonLoadedAmount] =
@@ -11,7 +34,7 @@ const PokemonProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [isShiny, setIsShiny] = useState(false);
-  const [offset, setOffset] = useState(0);
+  const [selectedTypes, setSelectedTypes] = useState([]);
 
   const getPokemon = async () => {
     setIsButtonDisabled(true);
@@ -62,6 +85,10 @@ const PokemonProvider = ({ children }) => {
     setIsShiny(!isShiny);
   };
 
+  const selectType = (type) => {
+    setSelectedTypes(type);
+  };
+
   useEffect(() => {
     getPokemon();
   }, [offset]);
@@ -84,6 +111,9 @@ const PokemonProvider = ({ children }) => {
         pokemonNames,
         pokemonLoadedAmount,
         handleLoadMoreClick,
+        selectType,
+        types,
+        selectedTypes,
       }}
     >
       {children}

@@ -11,6 +11,7 @@ const Pokedex = () => {
     isButtonDisabled,
     handleLoadMoreClick,
     pokemonLoadedAmount,
+    selectedTypes,
   } = useContext(PokemonContext);
 
   if (isLoading) return <div>loading...</div>;
