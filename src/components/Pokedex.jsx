@@ -19,16 +19,34 @@ const Pokedex = () => {
   return (
     <div className="main">
       <div className="pokedex">
-        {pokemonList.map((pokemon) => {
-          if (pokemon.id <= maxNumberOfPokemon)
-            return (
-              <PokemonSmall
-                key={pokemon.id}
-                isShiny={isShiny}
-                pokemon={pokemon}
-              />
-            );
-        })}
+        {selectedTypes.length > 0
+          ? pokemonList.map((pokemon) => {
+              if (
+                pokemon.id <= maxNumberOfPokemon &&
+                pokemon.types.some((type) =>
+                  selectedTypes.includes(type.type.name)
+                )
+              ) {
+                return (
+                  <PokemonSmall
+                    key={pokemon.id}
+                    isShiny={isShiny}
+                    pokemon={pokemon}
+                  />
+                );
+              }
+            })
+          : pokemonList.map((pokemon) => {
+              if (pokemon.id <= maxNumberOfPokemon) {
+                return (
+                  <PokemonSmall
+                    key={pokemon.id}
+                    isShiny={isShiny}
+                    pokemon={pokemon}
+                  />
+                );
+              }
+            })}
       </div>
       <div className="loadBtnContainer">
         <button
@@ -44,5 +62,4 @@ const Pokedex = () => {
     </div>
   );
 };
-
 export default Pokedex;

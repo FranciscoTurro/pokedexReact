@@ -47,6 +47,7 @@ const Header = () => {
                   <input
                     type="checkbox"
                     id={`${type}Checkbox`}
+                    checked={selectedTypes.includes(type)}
                     onClick={(event) => {
                       if (event.target.checked) {
                         selectType([...selectedTypes, type]);

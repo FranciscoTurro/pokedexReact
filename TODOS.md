@@ -11,6 +11,7 @@
 - do a revamp of the props each component takes. very specific components can use very specific props, generic components use generic props
 - very small "bugs" with the autocompletion input, it doesnt follow the user when it uses the arrow keys, and a user can hover 2 things at once (one with mouse and one with keyboard). good practice because it was AI generated, so it would be good to go through it and try to figure it out
 - add another page, just to try react router a bit more (FAQ, something funny about the color palette being from persona 4, maybe some picture or something)
+- look at the Pokedex return statement. keep code DRY!!!
 
 # TODOS NECESSARY FOR THE APP TO BE "FINISHED":
 
