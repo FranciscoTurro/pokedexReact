@@ -65,8 +65,29 @@ body {
 }
 
 .headerBtnContainer {
+  position: relative;
   display: flex;
   gap: 3em;
+}
+
+.filters {
+  right: 0;
+  top: 100%;
+  background-color: var(--yellow);
+  color: black;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 13rem;
+  padding: 0.5em;
+}
+
+.filters label:hover {
+  cursor: pointer;
+  background-color: var(--dark-gray);
+  border-radius: 5px;
+  padding: 0.2em;
+  color: white;
 }
 
 .main {
@@ -281,23 +302,6 @@ body {
   border: 2px solid var(--dark-gray);
 }
 
-.filters {
-  overflow-y: auto;
-  max-height: 10em;
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  z-index: 1;
-  color: black;
-}
-
 /* PokeInput ------------------------------------------------------------------------------------*/
 
 .suggestion-input {
@@ -321,8 +325,6 @@ body {
   top: calc(100% + 10px);
   left: 0;
   right: 0;
-  margin: 0;
-  padding: 0;
   list-style: none;
   background-color: #fff;
   border: 1px solid #ccc;

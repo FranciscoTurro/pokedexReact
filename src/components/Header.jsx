@@ -1,5 +1,5 @@
 import { Outlet, useNavigate, useLocation } from 'react-router';
-import { useContext, useState } from 'react';
+import { useContext, useState, useRef, useEffect } from 'react';
 import PokemonContext from '../context/PokemonContext';
 import AutocompleteInput from './AutocompleteInput';
 import uppercase from '../util/uppercase';
@@ -16,7 +16,25 @@ const Header = () => {
 
   const navigate = useNavigate();
 
+  const inputRef = useRef(null);
+  const filterButtonRef = useRef(null);
   const [showFilters, setShowFilters] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        inputRef.current &&
+        !inputRef.current.contains(event.target) &&
+        event.target !== filterButtonRef.current
+      ) {
+        setShowFilters(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [inputRef]);
 
   return (
     <div className="header">
@@ -34,6 +52,7 @@ const Header = () => {
           )}
           {useLocation().pathname === '/' && (
             <button
+              ref={filterButtonRef}
               onClick={() => setShowFilters(!showFilters)}
               className="btn"
             >
@@ -41,13 +60,13 @@ const Header = () => {
             </button>
           )}
           {showFilters && (
-            <div className="filters">
+            <div className="filters" ref={inputRef}>
               {types.map((type) => (
                 <label key={type} htmlFor={`${type}Checkbox`}>
                   <input
                     type="checkbox"
                     id={`${type}Checkbox`}
-                    checked={selectedTypes.includes(type)}
+                    defaultChecked={selectedTypes.includes(type)}
                     onClick={(event) => {
                       if (event.target.checked) {
                         selectType([...selectedTypes, type]);
