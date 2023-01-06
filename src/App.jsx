@@ -9,5 +9,4 @@ const App = () => {
     </PokemonProvider>
   );
 };
-
 export default App;
